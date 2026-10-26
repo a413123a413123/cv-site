@@ -274,6 +274,7 @@ dl.kv dd { max-width: 36em; }
 .photos { display: grid; gap: var(--s4); }
 .photos img { aspect-ratio: 4 / 3; object-fit: cover; }
 .photos img.portrait { object-position: 50% 30%; }
+.photos img.doc { aspect-ratio: auto; object-fit: contain; }
 
 /* 修課 */
 .courses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5); max-width: 1160px; align-items: start; }
@@ -575,7 +576,7 @@ dl.kv dd { max-width: 36em; }
             <dt>組別</dt><dd>智慧感測與互動科技組</dd>
             <dt>結果</dt><dd>優選獎，獎金 NT$12,000</dd>
             <dt>日期</dt><dd>2026-06-04 決賽</dd>
-            <dt>作品</dt><dd>FallGuard，on-device 即時跌倒偵測。決賽獨自出席簡報，以實際跌倒觸發偵測。</dd>
+            <dt>作品</dt><dd>FallGuard，on-device 即時跌倒偵測，決賽以實際跌倒觸發偵測。</dd>
           </dl>
         </article>
         <article class="card">
@@ -588,12 +589,16 @@ dl.kv dd { max-width: 36em; }
       </div>
       <div class="photos">
         <figure class="fig">
+          <img class="doc" src="img/ntpu-cert.jpg" alt="國立臺北大學獎狀，得獎項目為 115 年 AI 智慧跨域整合創作競賽主題一智慧感測與互動科技，得獎名次優選獎" width="1401" height="996">
+          <figcaption><span class="code">FIG. M6-2</span>國立臺北大學頒發之優選獎獎狀，民國 115 年 6 月。</figcaption>
+        </figure>
+        <figure class="fig">
           <img class="portrait" src="img/award.jpg" alt="臺北大學 AI 智慧跨域整合創作競賽頒獎典禮，陳泓光手持優選獎獎金板與頒獎人合影" width="900" height="1066">
-          <figcaption><span class="code">FIG. M6-2</span>2026-06-04 頒獎典禮。照片：國立臺北大學提供。</figcaption>
+          <figcaption><span class="code">FIG. M6-3</span>2026-06-04 頒獎典禮。照片：國立臺北大學提供。</figcaption>
         </figure>
         <figure class="fig">
           <img src="img/demo.jpg" alt="決賽現場，陳泓光向後跌坐在軟墊上，手持手機示範跌倒偵測" width="1200" height="1095">
-          <figcaption><span class="code">FIG. M6-3</span>決賽實機示範，以實際跌倒觸發 FallGuard。照片：國立臺北大學提供。</figcaption>
+          <figcaption><span class="code">FIG. M6-4</span>決賽實機示範，以實際跌倒觸發 FallGuard。照片：國立臺北大學提供。</figcaption>
         </figure>
       </div>
     </div>
