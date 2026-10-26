@@ -6,69 +6,70 @@
 <title>陳泓光 Hong-Guang Chen</title>
 <meta name="description" content="陳泓光的學經歷：陽明交大 AI 碩士學位學程、IMPACT-IAAC 2026 論文、FallGuard 端側模型、CNN 加速晶片實作。">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4 30 11 16 18 2 11Z' fill='%23C96726'/%3E%3Cpath d='M2 16l14 7 14-7' fill='none' stroke='%2323459D' stroke-width='2.4'/%3E%3Cpath d='M2 21l14 7 14-7' fill='none' stroke='%2323459D' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4 30 11 16 18 2 11Z' fill='%23F4A16D'/%3E%3Cpath d='M2 16l14 7 14-7' fill='none' stroke='%23C3A5F9' stroke-width='2.4'/%3E%3Cpath d='M2 21l14 7 14-7' fill='none' stroke='%233ACED6' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+<!-- 中文襯線只用在姓名與段落標題，以 text= 只下載用到的字 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap&text=陳泓光進行中研究獲獎晶片實作修課教學與團隊歷工具基礎聯絡" rel="stylesheet">
 <style>
-/* ── token：色票、字級、間距、陰影全部從設計簡報轉過來，下方樣式只引用變數 ── */
-/* 預設＝layout viewer 的深色畫布：深氧化藍底＋銅導線；淺色版是淺藍晶圓面，兩者都不用白底 */
+/* ── token：預設為深色畫布；淺色主題為淺藍晶圓面，兩者皆非白底 ── */
 :root {
-  --bg: #0D152E;          /* 畫布：深氧化藍（氧化層） */
-  --bg-si: #111419;       /* 交錯層：矽（低彩度），做出層與層的節奏 */
-  --card: #1E2945;        /* 晶圓面 */
-  --card-si: #1C2029;     /* 矽層上的卡片：石墨 */
-  --card-si-2: #262B36;
-  --card-2: #283454;      /* 表頭、凹陷區 */
-  --primary: #86C5FA;     /* 連結、層板：介電層淺藍 */
-  --band: #D2783B;        /* 銅：唯一的反轉帶 */
-  --band-ink: #0C142D;
-  --band-dim: #0C142D;
-  --copper: #E79459;      /* 銅 */
-  --copper-ink: #E79459;
-  --ink: #EBEEF7;
-  --ink-2: #AFB7CB;
-  --line: rgba(255, 255, 255, .12);
-  --line-strong: rgba(255, 255, 255, .32);
-  --pat: rgba(134, 197, 250, .50);     /* 層軌填充圖樣 */
-  --plate: rgba(134, 197, 250, .10);
-  --plate-edge: rgba(134, 197, 250, .55);
-  --stack-pat: rgba(231, 148, 89, .62);    /* 堆疊層板＝銅導線 */
-  --stack-fill: rgba(231, 148, 89, .13);
-  --stack-edge: rgba(231, 148, 89, .75);
-  --hot-pat: rgba(134, 197, 250, .85);     /* 被選中的層改亮藍 */
-  --hot-fill: rgba(134, 197, 250, .24);
-  --hot-edge: #86C5FA;
+  --bg: #060D1A;          /* 氧化層：近黑深藍 */
+  --bg-si: #0E141C;       /* 矽層：石墨，與氧化層交替做出分層 */
+  --card: #172232;
+  --card-2: #1F2C3F;
+  --card-si: #1E262F;
+  --card-si-2: #28313B;
+  --primary: #5FE9F2;
+  --band-a: #36DCEC;      /* 唯一的反轉帶：冰青到電光藍 */
+  --band-b: #4F91F2;
+  --band-ink: #050F20;
+  --ink: #E8F0F6;
+  --ink-2: #A4B7C6;
+  --line: rgba(160, 210, 255, .14);
+  --line-strong: rgba(160, 210, 255, .34);
+  --glow: rgba(64, 200, 240, .16);
+  --via: rgba(205, 228, 250, .38);
+  --pulse: #7CF5F1;
   --e1: 0 0 0 0 transparent;
-  --e2: 0 0 0 0 transparent;
-  --rim: inset 0 1px 0 rgba(255, 255, 255, .10);
+  --rim: inset 0 1px 0 rgba(255, 255, 255, .07);
 
-  --fs-hero: 72px; --fs-num: 56px; --fs-h2: 32px; --fs-h3: 20px;
+  /* 九層層色：只在冰青到電光藍之間漸變，靠明度拉開層次 */
+  --m8: #7CF5F1; --m7: #5FE9F2; --m6: #44DBF4; --m5: #2BCDF6; --m4: #1BBEF7;
+  --m3: #22ADF7; --m2: #339BF5; --m1: #4489F1; --sub: #5376EA;
+
+  --fs-hero: 76px; --fs-num: 56px; --fs-h2: 36px; --fs-h3: 20px;
   --fs-body: 16px; --fs-small: 14px; --fs-code: 13px;
   --font-zh: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
   --font-cond: "IBM Plex Sans Condensed", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px;
   --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
-  --radius: 4px;
-  --lsw-w: 248px;
+  --radius: 6px;
+  --lsw-w: 264px;
+  --slab-t: 10px;         /* 層板厚度 */
+  --slab-gap: 28px;       /* 層與層的間距 */
   color-scheme: dark;
 }
 :root[data-theme="light"] {
-  --bg: #CBDAF4; --bg-si: #C7CEDA; --card: #E3ECFA; --card-2: #C1D2EF; --card-si: #DCE1EA; --card-si-2: #CBD2DE;
-  --primary: #23459D; --band: #A34D16; --band-ink: #FBF1E8; --band-dim: #FBF1E8;
-  --copper: #B85A1E; --copper-ink: #8F400C;
-  --ink: #101A2F; --ink-2: #404D69; --line: #9FB2D6; --line-strong: #5F739A;
-  --pat: rgba(35, 69, 157, .55); --plate: rgba(35, 69, 157, .12);
-  --plate-edge: rgba(35, 69, 157, .60);
-  --stack-pat: rgba(160, 76, 22, .62); --stack-fill: rgba(184, 90, 30, .14); --stack-edge: rgba(143, 64, 12, .80);
-  --hot-pat: rgba(35, 69, 157, .85); --hot-fill: rgba(35, 69, 157, .22); --hot-edge: #23459D;
-  --e1: 0 1px 2px 0 rgba(16, 26, 47, .18), 0 2px 6px 1px rgba(16, 26, 47, .08);
-  --e2: 0 1px 2px 0 rgba(16, 26, 47, .20), 0 4px 12px 2px rgba(16, 26, 47, .10);
+  --bg: #CEDFEE; --bg-si: #C9D6E0; --card: #E2EDF7; --card-2: #BFD4E7; --card-si: #DEE6EC; --card-si-2: #C5CFD7;
+  --primary: #004A99; --band-a: #007583; --band-b: #144097; --band-ink: #F2F7FC;
+  --ink: #0B1626; --ink-2: #3A4C60; --line: #9DB4CC; --line-strong: #56708C;
+  --glow: rgba(0, 90, 160, .14); --via: rgba(20, 60, 110, .45); --pulse: #006F8D;
+  --e1: 0 1px 2px 0 rgba(11, 22, 38, .18), 0 2px 6px 1px rgba(11, 22, 38, .08);
   --rim: inset 0 0 0 0 transparent;
+  --m8: #006462; --m7: #00626C; --m6: #006076; --m5: #005C80; --m4: #005789;
+  --m3: #005192; --m2: #004A99; --m1: #00429E; --sub: #2239A1;
   color-scheme: light;
 }
+
+/* 每一層的代表色 */
+.l-m8 { --lc: var(--m8); } .l-m7 { --lc: var(--m7); } .l-m6 { --lc: var(--m6); }
+.l-m5 { --lc: var(--m5); } .l-m4 { --lc: var(--m4); } .l-m3 { --lc: var(--m3); }
+.l-m2 { --lc: var(--m2); } .l-m1 { --lc: var(--m1); } .l-sub { --lc: var(--sub); }
 
 /* ── 基礎排版 ── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -79,19 +80,21 @@ body {
   line-break: strict; overflow-wrap: anywhere; word-break: normal;
 }
 h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
-ul { padding: 0; list-style: none; }
+ul, ol { padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
 a { color: var(--primary); text-underline-offset: 3px; }
-a:hover { color: var(--copper-ink); }
-:focus-visible { outline: 2px solid var(--copper); outline-offset: 2px; border-radius: 2px; }
-.code { font-family: var(--font-mono); font-size: var(--fs-code); font-weight: 400; letter-spacing: 0; line-height: 1.2; color: var(--copper-ink); }
-.latin { font-family: var(--font-cond); }
+a:hover { color: var(--lc, var(--m7)); }
+:focus-visible { outline: 2px solid var(--m7); outline-offset: 2px; border-radius: 2px; }
+.code { font-family: var(--font-mono); font-size: var(--fs-code); font-weight: 400; line-height: 1.2; color: var(--lc, var(--m7)); }
+.en { font-family: var(--font-cond); font-size: var(--fs-code); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1.2; }
 .muted { color: var(--ink-2); }
 .num { font-variant-numeric: tabular-nums; }
 .nw { white-space: nowrap; }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: var(--s4); top: var(--s4); z-index: 10; background: var(--card); padding: var(--s2) var(--s4); }
 
-/* ── 填充圖樣：每一層一種，對應 layout 工具的點陣／斜線 ── */
+/* ── 填充圖樣：每層一種，對應 layout 工具的點陣與斜線 ── */
+.pat { --pat: color-mix(in oklab, var(--lc) 70%, transparent); }
 .p-m8 { background-image: repeating-linear-gradient(45deg, var(--pat) 0 1.5px, transparent 1.5px 7px); }
 .p-m7 { background-image: repeating-linear-gradient(-45deg, var(--pat) 0 1.5px, transparent 1.5px 7px); }
 .p-m6 { background-image: repeating-linear-gradient(45deg, var(--pat) 0 1px, transparent 1px 8px), repeating-linear-gradient(-45deg, var(--pat) 0 1px, transparent 1px 8px); }
@@ -100,7 +103,7 @@ a:hover { color: var(--copper-ink); }
 .p-m3 { background-image: repeating-linear-gradient(90deg, var(--pat) 0 1.5px, transparent 1.5px 6px); }
 .p-m2 { background-image: repeating-linear-gradient(45deg, var(--pat) 0 3px, transparent 3px 6px); }
 .p-m1 { background-image: conic-gradient(var(--pat) 25%, transparent 0 50%, var(--pat) 0 75%, transparent 0); background-size: 8px 8px; }
-.p-sub { background-image: radial-gradient(var(--pat) 1px, transparent 1.2px); background-size: 12px 12px; }
+.p-sub { background-image: radial-gradient(var(--pat) 1px, transparent 1.2px); background-size: 10px 10px; }
 
 /* ── 版面：左側 LSW 圖層面板＋右側層段落 ── */
 .shell { display: grid; grid-template-columns: var(--lsw-w) minmax(0, 1fr); min-height: 100vh; }
@@ -111,52 +114,83 @@ a:hover { color: var(--copper-ink); }
   display: flex; flex-direction: column; gap: var(--s5);
 }
 .lsw-head { display: flex; justify-content: space-between; align-items: baseline; }
-.lsw-head .code { color: var(--ink-2); }
-.lsw ol { list-style: none; padding: 0; display: grid; gap: var(--s1); }
+.lsw-head .en { color: var(--ink-2); }
+.lsw ol { display: grid; gap: 2px; }
 .lsw a {
-  display: grid; grid-template-columns: 28px 40px minmax(0, 1fr); align-items: center; gap: var(--s2);
+  display: grid; grid-template-columns: 30px 36px minmax(0, 1fr); align-items: center; gap: var(--s2);
   padding: var(--s2); border-radius: var(--radius); color: var(--ink); text-decoration: none; font-size: var(--fs-small);
-  border: 1px solid transparent;
+  border: 1px solid transparent; line-height: 1.5;
 }
-.lsw a:hover, .lsw a[aria-current="true"] { background: var(--card-2); border-color: var(--line); }
-.lsw a[aria-current="true"] .code { color: var(--copper-ink); }
-.lsw .code { color: var(--ink-2); }
-.swatch { width: 28px; height: 18px; border: 1px solid var(--plate-edge); background-color: var(--plate); border-radius: 2px; }
+.lsw a:hover, .lsw a[aria-current="true"] { background: var(--card-2); border-color: var(--line); color: var(--ink); }
+.lsw .names { display: grid; }
+.lsw .names .en { color: var(--lc); font-size: 11px; letter-spacing: .12em; }
+.swatch { width: 30px; height: 20px; border: 1px solid color-mix(in oklab, var(--lc) 75%, transparent); background-color: color-mix(in oklab, var(--lc) 16%, transparent); border-radius: 2px; }
 .lsw-foot { margin-top: auto; display: grid; gap: var(--s3); font-size: var(--fs-small); }
 .theme-btn {
   font: inherit; font-size: var(--fs-small); color: var(--ink); background: transparent; cursor: pointer;
   border: 1px solid var(--line-strong); border-radius: var(--radius); padding: var(--s1) var(--s3); justify-self: start;
 }
-
 main { min-width: 0; }
 
-/* ── 首屏：姓名＋旋轉堆疊 ── */
+/* ── 首屏：姓名＋立體堆疊 ── */
 .die {
-  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: var(--s7);
-  min-height: 100vh; padding: var(--s9) var(--s8) var(--s8);
-  max-width: 1360px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--s7);
+  min-height: 100vh; padding: var(--s9) var(--s8) var(--s8); max-width: 1400px;
+  background: radial-gradient(60% 70% at 78% 52%, var(--glow), transparent 70%);
 }
-.die h1 { font-size: var(--fs-hero); font-weight: 700; line-height: 1.1; letter-spacing: 0; }
-.die .latin-name { font-family: var(--font-cond); font-size: var(--fs-h3); font-weight: 600; letter-spacing: .12em; color: var(--ink-2); margin-top: var(--s2); }
-.die .affil { margin-top: var(--s6); font-size: var(--fs-h3); line-height: 1.6; max-width: 30em; }
-.die .affil small { display: block; font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s1); }
-.facts { margin-top: var(--s6); display: grid; gap: var(--s3); border-top: 1px solid var(--line); padding-top: var(--s5); }
-.facts li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: var(--s3); align-items: baseline; }
+.die .kicker { color: var(--ink-2); margin-bottom: var(--s5); }
+.die h1 { font-family: var(--font-serif); font-size: var(--fs-hero); font-weight: 600; line-height: 1.1; }
+.die .latin-name { font-family: var(--font-cond); font-size: var(--fs-h3); font-weight: 600; letter-spacing: .2em; color: var(--ink-2); margin-top: var(--s3); }
+.die .affil { margin-top: var(--s6); font-size: var(--fs-h3); line-height: 1.6; }
+.die .affil small { display: block; font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s2); }
+.facts { margin-top: var(--s6); display: grid; gap: var(--s4); border-top: 1px solid var(--line); padding-top: var(--s5); max-width: 36em; }
+.facts li { display: grid; gap: var(--s1); }
 .die .reading { margin-top: var(--s6); font-size: var(--fs-small); color: var(--ink-2); max-width: 34em; }
 
-.stack-wrap { perspective: 1600px; display: grid; place-items: center; aspect-ratio: 1 / 1; width: 100%; max-width: 520px; justify-self: center; }
+/* 立體堆疊：每片層板＝頂面＋四個側面，層與層之間以 via 柱相連 */
+.stack-wrap { perspective: 1800px; display: grid; place-items: center; aspect-ratio: 1 / 1; width: 100%; max-width: 560px; justify-self: center; }
+/* tilt 由游標驅動，stack 自轉；--explode 由捲動驅動，0 為收合、1 為完全拆開 */
+.tilt { width: 54%; aspect-ratio: 1 / 1; transform-style: preserve-3d; transform: rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); }
 .stack {
-  position: relative; width: 58%; aspect-ratio: 1 / 1; transform-style: preserve-3d;
-  transform: rotateX(60deg) rotateZ(-35deg); animation: spin 48s linear infinite;
+  --g: calc(var(--slab-gap) + var(--explode, 0) * 22px);
+  position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transform: rotateX(58deg) rotateZ(-35deg); animation: spin 60s linear infinite;
 }
-@keyframes spin { from { transform: rotateX(60deg) rotateZ(-35deg); } to { transform: rotateX(60deg) rotateZ(325deg); } }
-.plate {
-  --pat: var(--stack-pat);
-  position: absolute; inset: 0; transform: translateZ(calc(var(--i) * 24px - 96px));
-  background-color: var(--stack-fill); border: 1.5px solid var(--stack-edge); cursor: pointer;
-  transition: transform .4s ease, background-color .4s ease, border-color .4s ease;
+@keyframes spin { from { transform: rotateX(58deg) rotateZ(-35deg); } to { transform: rotateX(58deg) rotateZ(325deg); } }
+.floor { position: absolute; inset: -22%; transform: translateZ(calc(-150px - var(--explode, 0) * 90px)); background: radial-gradient(closest-side, var(--glow), transparent); }
+.slab {
+  position: absolute; inset: 0; transform-style: preserve-3d; cursor: pointer;
+  transform: translateZ(calc((var(--i) - 4) * var(--g) - 12px));
+  transition: transform .5s ease;
 }
-.plate.hot { --pat: var(--hot-pat); transform: translateZ(calc(var(--i) * 24px - 56px)); background-color: var(--hot-fill); border-color: var(--hot-edge); }
+.slab .face { position: absolute; }
+.slab .top {
+  inset: 0; transform: translateZ(var(--slab-t));
+  background-color: color-mix(in oklab, var(--lc) 20%, transparent);
+  border: 1px solid color-mix(in oklab, var(--lc) 85%, transparent);
+}
+.slab .s-front { left: 0; right: 0; bottom: 0; height: var(--slab-t); transform-origin: bottom; transform: rotateX(-90deg); background: color-mix(in oklab, var(--lc) 62%, transparent); }
+.slab .s-back  { left: 0; right: 0; top: 0; height: var(--slab-t); transform-origin: top; transform: rotateX(90deg); background: color-mix(in oklab, var(--lc) 38%, transparent); }
+.slab .s-right { top: 0; bottom: 0; right: 0; width: var(--slab-t); transform-origin: right; transform: rotateY(90deg); background: color-mix(in oklab, var(--lc) 50%, transparent); }
+.slab .s-left  { top: 0; bottom: 0; left: 0; width: var(--slab-t); transform-origin: left; transform: rotateY(-90deg); background: color-mix(in oklab, var(--lc) 44%, transparent); }
+.slab.hot { transform: translateZ(calc((var(--i) - 4) * var(--g) + 28px)); }
+.slab.hot .top { background-color: color-mix(in oklab, var(--lc) 45%, transparent); border-color: var(--ink); }
+/* via 柱：銀白底色，青色訊號脈衝由下往上流動 */
+.via { position: absolute; width: 0; height: 0; transform-style: preserve-3d; transform: translateZ(calc((var(--i) - 4) * var(--g) - 12px + var(--slab-t))); }
+.via i {
+  position: absolute; left: -2px; bottom: 0; width: 4px; height: calc(var(--g) - var(--slab-t));
+  background: linear-gradient(to top, var(--via) 0 35%, var(--pulse) 45% 55%, var(--via) 65% 100%) 0 0 / 100% 300%;
+  transform-origin: bottom; transform: rotateX(-90deg);
+  animation: pulse 2.4s linear infinite; animation-delay: var(--d, 0s);
+}
+.via i + i { transform: rotateZ(90deg) rotateX(-90deg); }
+@keyframes pulse { from { background-position: 0 0; } to { background-position: 0 -200%; } }
+
+/* 層軌沉積：段落進入畫面時，層軌由下往上長出、標題色條展開 */
+.js-anim .rail .strip { transform: scaleY(0); transform-origin: bottom; transition: transform 1.1s cubic-bezier(.2, .7, .1, 1); }
+.js-anim .layer-head::before { width: 0; transition: width .9s cubic-bezier(.2, .7, .1, 1) .2s; }
+.js-anim .layer.in .rail .strip { transform: scaleY(1); }
+.js-anim .layer.in .layer-head::before { width: 64px; }
 
 /* ── 層段落 ── */
 .layer { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--s6); padding: var(--s8) var(--s8) var(--s8) var(--s6); border-top: 1px solid var(--line); }
@@ -164,108 +198,134 @@ main { min-width: 0; }
 .layer.dense { padding-block: var(--s7); }
 .layer.sparse { padding-block: var(--s9); }
 .rail { display: grid; grid-template-rows: auto 1fr; justify-items: start; gap: var(--s3); }
-.rail .strip { width: 16px; height: 100%; min-height: 120px; border: 1px solid var(--plate-edge); background-color: var(--plate); border-radius: 2px; }
-.layer-head { display: flex; align-items: baseline; gap: var(--s4); flex-wrap: wrap; margin-bottom: var(--s6); }
-.layer-head h2 { font-size: var(--fs-h2); font-weight: 700; line-height: 1.25; }
-.layer-head p { font-size: var(--fs-small); color: var(--ink-2); }
-.body-text { max-width: 36em; }
-.body-text p + p { margin-top: var(--s3); }
+.rail .strip { width: 16px; height: 100%; min-height: 120px; border: 1px solid color-mix(in oklab, var(--lc) 70%, transparent); background-color: color-mix(in oklab, var(--lc) 12%, transparent); border-radius: 2px; }
+.layer-head { position: relative; margin-bottom: var(--s6); padding-top: var(--s4); }
+.layer-head::before { content: ""; position: absolute; left: 0; top: 0; width: 64px; height: 3px; background: var(--lc); }
+.layer-head .en { color: var(--lc); }
+.layer-head h2 { font-family: var(--font-serif); font-size: var(--fs-h2); font-weight: 600; line-height: 1.25; margin-top: var(--s2); }
+.layer-head p { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s2); }
+.layer-head p.en { font-size: var(--fs-code); color: var(--lc); margin-top: 0; }
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s5); max-width: 1120px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5); max-width: 1160px; align-items: start; }
+.span2 { grid-column: 1 / -1; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s5); box-shadow: var(--e1), var(--rim); }
 .card h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.45; }
 .card .when { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s1); }
 .card ul { margin-top: var(--s4); display: grid; gap: var(--s2); }
 .card li { position: relative; padding-left: var(--s4); }
-.card li::before { content: ""; position: absolute; left: 0; top: .75em; width: 6px; height: 6px; background: var(--copper); }
+.card li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; background: var(--lc); }
 .card .link { display: inline-block; margin-top: var(--s4); font-size: var(--fs-small); }
+.card.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s6); align-items: center; }
+.card .fig { margin-top: var(--s5); }
+.card.split .fig { margin-top: 0; }
 
-/* 規格表：datasheet 的 項目／條件／數值／單位 */
-.sheet-narrow { max-width: 920px; }
-.sheet-wrap { overflow-x: auto; max-width: 1120px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--e1), var(--rim); }
+/* 圖：細框＋編號圖說 */
+.fig img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.fig-white img { background: #FFFFFF; padding: var(--s3); }
+.fig figcaption { margin-top: var(--s2); font-size: var(--fs-small); line-height: 1.6; color: var(--ink-2); }
+.fig figcaption .code { margin-right: var(--s2); }
+.fig svg { width: 100%; height: auto; display: block; }
+.svg-box { fill: var(--card-2); stroke: var(--line-strong); stroke-width: 1; }
+.svg-hi { fill: color-mix(in oklab, var(--lc) 18%, transparent); stroke: var(--lc); stroke-width: 1.5; }
+.svg-line { stroke: var(--line-strong); stroke-width: 1.2; fill: none; }
+.svg-acc { stroke: var(--lc); stroke-width: 1.5; fill: none; }
+.svg-t { fill: var(--ink); font-size: 13px; font-family: var(--font-zh); }
+.svg-s { fill: var(--ink-2); font-size: 11px; font-family: var(--font-zh); }
+.svg-c { fill: var(--lc); font-size: 11px; font-family: var(--font-mono); }
+.svg-cell { fill: var(--card); stroke: var(--line-strong); stroke-width: .8; }
+.svg-pad { fill: transparent; stroke: var(--line); stroke-width: .8; stroke-dasharray: 2 2; }
+
+/* 規格表：datasheet 的 Parameter／Condition／Value／Unit */
+.sheet-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--e1), var(--rim); }
+.sheet-narrow { max-width: 920px; margin-top: var(--s6); }
 table { border-collapse: collapse; width: 100%; font-size: var(--fs-small); line-height: 1.6; }
 caption { text-align: left; padding: var(--s3) var(--s4); font-size: var(--fs-small); color: var(--ink-2); border-bottom: 1px solid var(--line); }
 th, td { text-align: left; padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); vertical-align: top; }
-thead th { background: var(--card-2); font-weight: 600; border-bottom: 2px solid var(--primary); white-space: nowrap; }
+thead th { background: var(--card-2); font-weight: 600; border-bottom: 2px solid var(--lc); white-space: nowrap; }
 tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
-td.v { font-family: var(--font-mono); font-size: var(--fs-code); color: var(--copper-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.v { font-family: var(--font-mono); font-size: var(--fs-code); color: var(--lc); white-space: nowrap; font-variant-numeric: tabular-nums; }
 tbody th { font-weight: 600; }
 
-.paper { max-width: 1120px; margin-bottom: var(--s6); background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--primary); border-radius: var(--radius); padding: var(--s5) var(--s6); box-shadow: var(--e1), var(--rim); }
-.paper .title { font-family: var(--font-cond); font-size: var(--fs-h3); font-weight: 600; line-height: 1.5; max-width: 52em; }
-dl.kv { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: var(--s2) var(--s4); margin-top: var(--s4); font-size: var(--fs-small); }
-dl.kv dd { max-width: 36em; }
+.paper { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: var(--s6); max-width: 1160px; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--lc); border-radius: var(--radius); padding: var(--s6); box-shadow: var(--e1), var(--rim); }
+.paper .title { font-family: var(--font-cond); font-size: var(--fs-h3); font-weight: 600; line-height: 1.5; margin-top: var(--s2); }
+dl.kv { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: var(--s2) var(--s4); margin-top: var(--s4); font-size: var(--fs-small); }
 dl.kv dt { color: var(--ink-2); }
+dl.kv dd { max-width: 36em; }
 
-.notes { margin-top: var(--s6); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--s5); max-width: 1120px; }
+.notes { margin-top: var(--s6); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--s5); max-width: 1160px; align-items: start; }
+.note + .note { margin-top: var(--s5); }
 .note h3 { font-size: var(--fs-body); font-weight: 600; line-height: 1.5; }
 .note h3 .code { margin-right: var(--s2); }
 .note p { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s1); }
 
 /* 數字帶：全頁唯一的反轉底色 */
-.band { background: var(--band); color: var(--band-ink); padding: var(--s9) var(--s8); }
-.band .code { color: var(--band-ink); }
-.band-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s7) var(--s6); max-width: 1120px; margin-top: var(--s6); }
+.band { background: linear-gradient(100deg, var(--band-a), var(--band-b)); color: var(--band-ink); padding: var(--s9) var(--s8); }
+.band .en { color: var(--band-ink); }
+.band-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s7) var(--s6); max-width: 1160px; margin-top: var(--s6); }
 .band .n { font-family: var(--font-cond); font-size: var(--fs-num); font-weight: 600; line-height: 1.05; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
-.band .l { margin-top: var(--s2); font-size: var(--fs-small); color: var(--band-dim); }
+.band .l { margin-top: var(--s2); font-size: var(--fs-small); }
 
 /* 獲獎 */
-.award { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s6); max-width: 1120px; align-items: start; }
-.photos { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s3); }
-.photos img { width: 100%; height: auto; object-fit: cover; border-radius: var(--radius); display: block; aspect-ratio: 4 / 3; border: 1px solid var(--line); }
-.photos img.portrait { aspect-ratio: 4 / 3; object-position: 50% 30%; }
-.photos figcaption { grid-column: 1 / -1; font-size: var(--fs-small); color: var(--ink-2); }
+.award { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s6); max-width: 1160px; align-items: start; }
 .award-list { display: grid; gap: var(--s5); }
+.photos { display: grid; gap: var(--s4); }
+.photos img { aspect-ratio: 4 / 3; object-fit: cover; }
+.photos img.portrait { object-position: 50% 30%; }
 
-/* 修課表 */
-.courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--s5); max-width: 1120px; }
-.grade { font-family: var(--font-mono); font-size: var(--fs-code); font-weight: 400; white-space: nowrap; }
-.grade.top { color: var(--copper-ink); }
+/* 修課 */
+.courses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5); max-width: 1160px; align-items: start; }
+.grade { font-family: var(--font-mono); font-size: var(--fs-code); white-space: nowrap; }
+.grade.top { color: var(--lc); }
+.tnote { padding: var(--s3) var(--s4); font-size: var(--fs-code); color: var(--ink-2); border-top: 1px solid var(--line); }
 
-/* 學歷：大字 */
+/* 學歷 */
 .schools { display: grid; gap: var(--s7); max-width: 960px; }
-.school h3 { font-size: var(--fs-h2); font-weight: 700; line-height: 1.25; }
+.school { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: var(--s5); align-items: baseline; }
+.school .yrs { font-family: var(--font-mono); font-size: var(--fs-code); color: var(--lc); }
+.school h3 { font-family: var(--font-zh); font-size: var(--fs-h2); font-weight: 600; line-height: 1.25; }
 .school .dept { font-size: var(--fs-h3); margin-top: var(--s2); }
 .school .meta { margin-top: var(--s3); display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); font-size: var(--fs-small); color: var(--ink-2); }
 .school .meta b { color: var(--ink); font-weight: 600; }
 
 /* 工具 */
 .tools { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--s3) var(--s5); max-width: 960px; font-size: var(--fs-small); }
-.tools dt { font-weight: 600; }
+.tools dt { font-weight: 600; color: var(--lc); }
 .tools dd { margin: 0; max-width: 36em; }
 .repos { margin-top: var(--s7); max-width: 700px; }
 .repos h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.4; margin-bottom: var(--s4); }
 .repos td:first-child { white-space: nowrap; }
 
 .contact { padding: var(--s9) var(--s8) var(--s9) calc(96px + var(--s6) + var(--s6)); border-top: 1px solid var(--line); background: var(--bg-si); }
+.contact h2 { font-family: var(--font-serif); font-size: var(--fs-h2); font-weight: 600; line-height: 1.25; margin-top: var(--s2); }
 .contact ul { display: grid; gap: var(--s2); margin-top: var(--s5); font-size: var(--fs-h3); }
 .contact .src { margin-top: var(--s6); font-size: var(--fs-small); color: var(--ink-2); max-width: 36em; }
 
-/* ── 窄螢幕：LSW 收成頂部橫列 ── */
+/* ── 窄螢幕 ── */
 @media (max-width: 1099px) {
   .shell { grid-template-columns: minmax(0, 1fr); align-content: start; }
   .lsw { position: sticky; top: 0; z-index: 5; height: auto; flex-direction: row; align-items: center; gap: var(--s3); padding: var(--s2) var(--s4); border-right: 0; border-bottom: 1px solid var(--line); overflow-x: auto; }
   .lsw-head, .lsw-foot .src-note { display: none; }
   .lsw ol { display: flex; gap: var(--s1); }
   .lsw a { grid-template-columns: 22px auto; white-space: nowrap; }
-  .lsw a .name { display: none; }
+  .lsw a .names { display: none; }
   .lsw-foot { margin-top: 0; }
   .swatch { width: 22px; height: 14px; }
-  .die { grid-template-columns: minmax(0, 1fr); padding: var(--s7) var(--s4) var(--s7); min-height: auto; gap: var(--s5); }
-  .stack-wrap { max-width: 320px; order: -1; }
+  .die { grid-template-columns: minmax(0, 1fr); padding: var(--s7) var(--s4); min-height: auto; gap: var(--s5); }
+  .stack-wrap { max-width: 340px; order: -1; }
   .layer { grid-template-columns: minmax(0, 1fr); gap: var(--s4); padding: var(--s7) var(--s4); }
   .layer.sparse { padding-block: var(--s8); }
   .rail { grid-template-rows: auto; grid-template-columns: auto 1fr; align-items: center; }
   .rail .strip { width: 100%; height: 10px; min-height: 0; }
   .band { padding: var(--s8) var(--s4); }
   .band-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .award { grid-template-columns: minmax(0, 1fr); }
+  .grid2, .award, .courses, .notes, .paper, .card.split { grid-template-columns: minmax(0, 1fr); }
   .contact { padding: var(--s8) var(--s4); }
   .tools { grid-template-columns: minmax(0, 1fr); gap: var(--s1); }
   .tools dd { margin-bottom: var(--s3); }
+  .school { grid-template-columns: minmax(0, 1fr); gap: var(--s2); }
 }
 @media (max-width: 560px) {
-  :root { --fs-hero: 48px; --fs-num: 36px; --fs-h2: 26px; }
+  :root { --fs-hero: 52px; --fs-num: 36px; --fs-h2: 28px; }
   .band-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
   dl.kv { grid-template-columns: minmax(0, 1fr); gap: 0; }
   dl.kv dd { margin-bottom: var(--s2); }
@@ -273,8 +333,8 @@ dl.kv dt { color: var(--ink-2); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .stack { animation: none; }
-  .plate { transition: none; }
+  .stack, .via i { animation: none; }
+  .slab { transition: none; }
 }
 </style>
 </head>
@@ -283,17 +343,17 @@ dl.kv dt { color: var(--ink-2); }
 <div class="shell">
 
 <nav class="lsw" aria-label="圖層導覽">
-  <div class="lsw-head"><strong>Layers</strong><span class="code">M8 → SUB</span></div>
+  <div class="lsw-head"><strong>Layers</strong><span class="en" lang="en">M8 → SUB</span></div>
   <ol>
-    <li><a href="#m8" data-layer="m8"><span class="swatch p-m8"></span><span class="code">M8</span><span class="name">進行中</span></a></li>
-    <li><a href="#m7" data-layer="m7"><span class="swatch p-m7"></span><span class="code">M7</span><span class="name">研究</span></a></li>
-    <li><a href="#m6" data-layer="m6"><span class="swatch p-m6"></span><span class="code">M6</span><span class="name">獲獎</span></a></li>
-    <li><a href="#m5" data-layer="m5"><span class="swatch p-m5"></span><span class="code">M5</span><span class="name">晶片實作</span></a></li>
-    <li><a href="#m4" data-layer="m4"><span class="swatch p-m4"></span><span class="code">M4</span><span class="name">修課</span></a></li>
-    <li><a href="#m3" data-layer="m3"><span class="swatch p-m3"></span><span class="code">M3</span><span class="name">教學與團隊</span></a></li>
-    <li><a href="#m2" data-layer="m2"><span class="swatch p-m2"></span><span class="code">M2</span><span class="name">學歷</span></a></li>
-    <li><a href="#m1" data-layer="m1"><span class="swatch p-m1"></span><span class="code">M1</span><span class="name">工具</span></a></li>
-    <li><a href="#sub" data-layer="sub"><span class="swatch p-sub"></span><span class="code">SUB</span><span class="name">基礎</span></a></li>
+    <li><a href="#m8" data-layer="m8" class="l-m8"><span class="swatch pat p-m8"></span><span class="code">M8</span><span class="names"><span>進行中</span><span class="en" lang="en">Now</span></span></a></li>
+    <li><a href="#m7" data-layer="m7" class="l-m7"><span class="swatch pat p-m7"></span><span class="code">M7</span><span class="names"><span>研究</span><span class="en" lang="en">Research</span></span></a></li>
+    <li><a href="#m6" data-layer="m6" class="l-m6"><span class="swatch pat p-m6"></span><span class="code">M6</span><span class="names"><span>獲獎</span><span class="en" lang="en">Awards</span></span></a></li>
+    <li><a href="#m5" data-layer="m5" class="l-m5"><span class="swatch pat p-m5"></span><span class="code">M5</span><span class="names"><span>晶片實作</span><span class="en" lang="en">Silicon</span></span></a></li>
+    <li><a href="#m4" data-layer="m4" class="l-m4"><span class="swatch pat p-m4"></span><span class="code">M4</span><span class="names"><span>修課</span><span class="en" lang="en">Coursework</span></span></a></li>
+    <li><a href="#m3" data-layer="m3" class="l-m3"><span class="swatch pat p-m3"></span><span class="code">M3</span><span class="names"><span>教學與團隊</span><span class="en" lang="en">Teaching &amp; Teams</span></span></a></li>
+    <li><a href="#m2" data-layer="m2" class="l-m2"><span class="swatch pat p-m2"></span><span class="code">M2</span><span class="names"><span>學歷</span><span class="en" lang="en">Education</span></span></a></li>
+    <li><a href="#m1" data-layer="m1" class="l-m1"><span class="swatch pat p-m1"></span><span class="code">M1</span><span class="names"><span>工具</span><span class="en" lang="en">Toolchain</span></span></a></li>
+    <li><a href="#sub" data-layer="sub" class="l-sub"><span class="swatch pat p-sub"></span><span class="code">SUB</span><span class="names"><span>基礎</span><span class="en" lang="en">Foundation</span></span></a></li>
   </ol>
   <div class="lsw-foot">
     <button class="theme-btn" type="button" id="themeBtn">切換淺色</button>
@@ -304,48 +364,91 @@ dl.kv dt { color: var(--ink-2); }
 <main>
 <header class="die" id="top">
   <div>
+    <p class="kicker en" lang="en">Curriculum Vitae · 2026</p>
     <h1>陳泓光</h1>
     <p class="latin-name" lang="en">HONG-GUANG CHEN</p>
     <p class="affil">國立陽明交通大學<br>人工智慧技術與應用碩士學位學程
-      <small>FCA Lab｜指導教授 黃經堯｜2025–2027（預計畢業）</small></p>
+      <small>FCA Lab｜指導教授 黃經堯｜2025–2027 預計畢業</small></p>
     <ul class="facts">
-      <li><span class="code">M7</span><span>IMPACT-IAAC 2026 論文，第一作者暨通訊作者</span></li>
-      <li><span class="code">M6</span><span>2026 總統盃黑客松，入選決審 20 強</span></li>
-      <li><span class="code">M6</span><span>2026 臺北大學 AI 智慧跨域整合創作競賽，優選獎</span></li>
+      <li class="l-m7"><span class="en" lang="en" style="color: var(--lc)">M7 · Research</span><span>IMPACT-IAAC 2026 論文 第一作者暨通訊作者</span></li>
+      <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 總統盃黑客松 入選決審 20 強</span></li>
+      <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 臺北大學 AI 智慧跨域整合創作競賽 優選獎</span></li>
     </ul>
-    <p class="reading">本頁依晶片 metal stack 的順序排列：最上層 M8 是進行中的工作，最下層 SUB（substrate）是中學時期。左側 Layer 清單與右側 stack 一一對應，滑過清單可看到對應的 layer。</p>
+    <p class="reading">頁面順序依照晶片的 metal stack：頂層 M8 是進行中的工作，往下依序是研究、獲獎、晶片實作、修課、教學與團隊、學歷與工具，最底層 SUB 是中學時期。滑過左側 Layer 清單，右側 stack 會浮起對應的層。</p>
   </div>
   <div class="stack-wrap" aria-hidden="true">
+    <div class="tilt" id="tilt">
     <div class="stack" id="stack">
-      <div class="plate p-sub" style="--i:0" data-layer="sub"></div>
-      <div class="plate p-m1" style="--i:1" data-layer="m1"></div>
-      <div class="plate p-m2" style="--i:2" data-layer="m2"></div>
-      <div class="plate p-m3" style="--i:3" data-layer="m3"></div>
-      <div class="plate p-m4" style="--i:4" data-layer="m4"></div>
-      <div class="plate p-m5" style="--i:5" data-layer="m5"></div>
-      <div class="plate p-m6" style="--i:6" data-layer="m6"></div>
-      <div class="plate p-m7" style="--i:7" data-layer="m7"></div>
-      <div class="plate p-m8" style="--i:8" data-layer="m8"></div>
+      <div class="floor"></div>
+      <div class="slab l-sub" style="--i:0" data-layer="sub"><div class="face top pat p-sub"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m1" style="--i:1" data-layer="m1"><div class="face top pat p-m1"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m2" style="--i:2" data-layer="m2"><div class="face top pat p-m2"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m3" style="--i:3" data-layer="m3"><div class="face top pat p-m3"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m4" style="--i:4" data-layer="m4"><div class="face top pat p-m4"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m5" style="--i:5" data-layer="m5"><div class="face top pat p-m5"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m6" style="--i:6" data-layer="m6"><div class="face top pat p-m6"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m7" style="--i:7" data-layer="m7"><div class="face top pat p-m7"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div class="slab l-m8" style="--i:8" data-layer="m8"><div class="face top pat p-m8"></div><div class="face s-front"></div><div class="face s-back"></div><div class="face s-right"></div><div class="face s-left"></div></div>
+      <div id="vias"></div>
+    </div>
     </div>
   </div>
 </header>
 
-<section class="layer" id="m8" aria-labelledby="h-m8">
-  <div class="rail"><span class="code">M8</span><span class="strip p-m8"></span></div>
+<section class="layer l-m8" id="m8" aria-labelledby="h-m8">
+  <div class="rail"><span class="code">M8</span><span class="strip pat p-m8"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m8">進行中</h2><p>2026 年秋季</p></div>
-    <div class="cards">
-      <article class="card">
-        <h3>On-premise AI4S Research Automation</h3>
-        <p class="when">2026-09 起｜FCA Lab</p>
-        <ul>
-          <li>Inner loop：常駐於 WSL2 systemd 的 Python runner 輪詢 job queue，依序執行 GPU 實驗。</li>
-          <li>Outer loop：每 15 分鐘以 headless 模式喚醒 Claude Code，讀取結果並排入下一批 job。</li>
-          <li>更換方法、修改論文前須經 human approval gate；另接 local vector RAG（Ollama＋LanceDB）與 arXiv daily radar。</li>
-        </ul>
+    <div class="layer-head"><p class="en" lang="en">M8 · Now</p><h2 id="h-m8">進行中</h2><p>2026 年秋季</p></div>
+    <div class="grid2">
+      <article class="card split span2">
+        <div>
+          <h3 lang="en">On-premise AI4S Research Automation</h3>
+          <p class="when">2026-09 起｜FCA Lab</p>
+          <ul>
+            <li>Inner loop：常駐於 WSL2 systemd 的 Python runner 輪詢 job queue，依序執行 GPU 實驗。</li>
+            <li>Outer loop：每 15 分鐘以 headless 模式喚醒 Claude Code，讀取結果並排入下一批 job。</li>
+            <li>更換方法與修改論文都要先經過 human approval gate；系統另接 local vector RAG，使用 Ollama 與 LanceDB，並有 arXiv daily radar。</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 300" role="img" aria-label="AI4S 雙迴圈架構示意：外迴圈由 Claude Code 排入任務，內迴圈由 Python runner 執行 GPU 實驗">
+            <defs><marker id="arA" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--lc)"/></marker>
+            <marker id="arN" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
+            <rect class="svg-hi" x="196" y="18" width="168" height="56" rx="6"/>
+            <text class="svg-t" x="280" y="42" text-anchor="middle">Claude Code</text>
+            <text class="svg-s" x="280" y="60" text-anchor="middle">headless · 每 15 分鐘</text>
+            <rect class="svg-box" x="206" y="122" width="148" height="40" rx="6"/>
+            <text class="svg-t" x="280" y="147" text-anchor="middle">job queue</text>
+            <rect class="svg-box" x="196" y="212" width="168" height="56" rx="6"/>
+            <text class="svg-t" x="280" y="236" text-anchor="middle">Python runner</text>
+            <text class="svg-s" x="280" y="254" text-anchor="middle">WSL2 systemd</text>
+            <rect class="svg-box" x="398" y="222" width="104" height="36" rx="6"/>
+            <text class="svg-t" x="450" y="245" text-anchor="middle">GPU 實驗</text>
+            <path class="svg-acc" d="M280 74 V120" marker-end="url(#arA)"/>
+            <text class="svg-c" x="288" y="102">enqueue</text>
+            <path class="svg-line" d="M280 162 V210" marker-end="url(#arN)"/>
+            <path class="svg-line" d="M364 240 H396" marker-end="url(#arN)"/>
+            <path class="svg-acc" d="M450 222 V46 H366" marker-end="url(#arA)"/>
+            <text class="svg-c" x="456" y="140">results</text>
+            <text class="svg-c" x="196" y="196">INNER LOOP</text>
+            <text class="svg-c" x="370" y="96">OUTER LOOP</text>
+            <rect class="svg-box" x="14" y="22" width="140" height="48" rx="6"/>
+            <text class="svg-t" x="84" y="44" text-anchor="middle">human approval</text>
+            <text class="svg-s" x="84" y="61" text-anchor="middle">換方法、改論文</text>
+            <path class="svg-line" d="M196 46 H156" stroke-dasharray="4 3" marker-end="url(#arN)"/>
+            <rect class="svg-box" x="14" y="122" width="140" height="48" rx="6"/>
+            <text class="svg-t" x="84" y="144" text-anchor="middle">local vector RAG</text>
+            <text class="svg-s" x="84" y="161" text-anchor="middle">Ollama · LanceDB</text>
+            <rect class="svg-box" x="14" y="212" width="140" height="40" rx="6"/>
+            <text class="svg-t" x="84" y="237" text-anchor="middle">arXiv daily radar</text>
+            <path class="svg-line" d="M154 146 C180 146 180 74 214 74"/>
+            <path class="svg-line" d="M154 232 C190 232 190 74 226 74"/>
+          </svg>
+          <figcaption><span class="code">FIG. M8-1</span>雙迴圈架構。</figcaption>
+        </figure>
       </article>
       <article class="card">
-        <h3>ICLAB（Integrated Circuit Design Laboratory）</h3>
+        <h3><span lang="en">ICLAB</span> <span class="muted">·</span> <span lang="en">Integrated Circuit Design Laboratory</span></h3>
         <p class="when">2026 秋修習中｜進行至 Lab06</p>
         <ul>
           <li>每次 Lab 以 Verilog 撰寫 RTL，並進行 functional verification 與 logic synthesis。</li>
@@ -353,32 +456,42 @@ dl.kv dt { color: var(--ink-2); }
         </ul>
       </article>
       <article class="card">
-        <h3>2026 總統盃黑客松 決審</h3>
+        <h3>2026 總統盃黑客松 <span class="nw">決審</span></h3>
         <p class="when">決審日 2026-11-11｜提案編號 153</p>
         <ul>
-          <li>FCA LAB 提案「未卜先雞、蛋然無恙」，2026-09-17 自 181 案中入選決審 20 強。</li>
+          <li>FCA LAB 提案「未卜先雞、蛋然無恙」於 2026-09-17 自 181 案中入選決審 20 強。</li>
           <li>十人跨校團隊，擔任隊長。</li>
           <li>依公開行情資料重新界定問題，產品由 price forecasting 改為 supply-pressure index；以 task card 指派 AI coding agents 產生程式碼，統籌三種角色 App 的交付。</li>
         </ul>
+        <figure class="fig">
+          <img src="img/eggwatch.jpg" alt="FCA LAB 產品網站首頁，標題為同一顆蛋不到三年半從 45.5 元跌到 18.5 元又回到 42.5 元" width="1400" height="875">
+          <figcaption><span class="code">FIG. M8-2</span>產品網站首頁，呈現 2010 至 2026 年的雞蛋產地價格走勢。</figcaption>
+        </figure>
       </article>
     </div>
   </div>
 </section>
 
-<section class="layer dense si" id="m7"aria-labelledby="h-m7">
-  <div class="rail"><span class="code">M7</span><span class="strip p-m7"></span></div>
+<section class="layer dense si l-m7" id="m7" aria-labelledby="h-m7">
+  <div class="rail"><span class="code">M7</span><span class="strip pat p-m7"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m7">研究</h2><p>Explainable／White-box AI、On-device Model、PCB Defect Detection</p></div>
+    <div class="layer-head"><p class="en" lang="en">M7 · Research</p><h2 id="h-m7">研究</h2><p lang="en">Explainable AI · White-box AI · On-device Model · PCB Defect Detection</p></div>
     <article class="paper">
-      <p class="code">CONFERENCE PAPER</p>
-      <p class="title" lang="en">Layout, Sensor, or Scarcity? A Cold-Start PCB Defect-Detection Benchmark and Decision Guide for New Product Introduction</p>
-      <dl class="kv">
-        <dt>作者</dt><dd lang="en">Hong-Guang Chen（第一作者暨通訊作者）、Cheng-Yu Yen、Ching-Yao Huang</dd>
-        <dt>會議</dt><dd>IMPACT-IAAC 2026（第 21 屆 International Microsystems, Packaging, Assembly and Circuits Technology Conference），2026-10-19～22，台北南港展覽館</dd>
-        <dt>狀態</dt><dd>2026-07-22 經三位審查人 blind review 錄取，排定 Oral Presentation，Paper ID TW0145；2026-10-06 完成 IEEE Electronic Publication Agreement</dd>
-        <dt>結果</dt><dd>模型更換 board layout 後表現維持；更換 image sensor 後 mAP50 由 0.970 降至 0.000。論文據此提出新產品導入（NPI）時的 sensor 選型準則。</dd>
-        <dt>程式碼</dt><dd><a href="https://github.com/a413123a413123/pcb-coldstart-benchmark">github.com/a413123a413123/pcb-coldstart-benchmark</a></dd>
-      </dl>
+      <div>
+        <p class="code">CONFERENCE PAPER</p>
+        <p class="title" lang="en">Layout, Sensor, or Scarcity? A Cold-Start PCB Defect-Detection Benchmark and Decision Guide for New Product Introduction</p>
+        <dl class="kv">
+          <dt>作者</dt><dd>Hong-Guang Chen 為第一作者暨通訊作者，共同作者 Cheng-Yu Yen、Ching-Yao Huang</dd>
+          <dt>會議</dt><dd>IMPACT-IAAC 2026，第 21 屆 International Microsystems, Packaging, Assembly and Circuits Technology Conference，2026-10-19 至 22，台北南港展覽館</dd>
+          <dt>狀態</dt><dd>2026-07-22 經三位審查人 blind review 錄取，排定 Oral Presentation，Paper ID TW0145；2026-10-06 完成 IEEE Electronic Publication Agreement</dd>
+          <dt>結果</dt><dd>模型更換 board layout 後表現維持；更換 image sensor 後 mAP50 由 0.970 降至 0.000。論文據此提出新產品導入 NPI 時的 sensor 選型準則。</dd>
+          <dt>程式碼</dt><dd><a href="https://github.com/a413123a413123/pcb-coldstart-benchmark">github.com/a413123a413123/pcb-coldstart-benchmark</a></dd>
+        </dl>
+      </div>
+      <figure class="fig fig-white">
+        <img src="img/paper-fig2.png" alt="論文 Fig. 2 長條圖：新板型切分的 mAP@0.5 約 0.95 至 0.99，跨感測器 direct transfer 為 0.000" width="1400" height="1233">
+        <figcaption><span class="code">FIG. M7-1</span>論文 Fig. 2：新板型切分 LOGO 與 LOBO 的 mAP@0.5 維持在 0.95 以上；跨感測器 direct transfer 為 0.000。</figcaption>
+      </figure>
     </article>
 
     <div class="sheet-wrap sheet-narrow">
@@ -397,53 +510,60 @@ dl.kv dt { color: var(--ink-2); }
     </div>
 
     <div class="notes">
-      <div class="note">
-        <h3><span class="code">2026-06</span>FallGuard：White-box On-device Fall Detection</h3>
-        <p>以 deep unfolding 將 ISTA 展開為 5 層並嵌入 1D-CNN，中間層對應 sparse coding 步驟。臺北大學競賽參賽作品。<a href="https://a413123a413123.github.io/fallguard-demo/">Demo</a></p>
+      <div class="card">
+        <h3><span lang="en">FallGuard</span><span class="muted"> · </span><span lang="en">White-box On-device Fall Detection</span></h3>
+        <p class="when">2026-06｜臺北大學競賽參賽作品</p>
+        <ul><li>以 deep unfolding 將 ISTA 展開為 5 層並嵌入 1D-CNN，中間層對應 sparse coding 步驟，可在手機端離線推論。</li></ul>
+        <figure class="fig">
+          <img src="img/fallguard.jpg" alt="FallGuard 展示頁標題：Edge AI、1D-CNN、Deep Unfolding" width="1200" height="383">
+          <figcaption><span class="code">FIG. M7-2</span>展示頁標題區。<a href="https://a413123a413123.github.io/fallguard-demo/">開啟展示頁</a></figcaption>
+        </figure>
       </div>
-      <div class="note">
-        <h3><span class="code">2026</span>Explainable AI（FCA Lab）</h3>
-        <p>診斷 Mamba 模型的 attribution artifact。以 learnable shrinkage function 取代 unrolled network 中固定的 soft-threshold。</p>
-      </div>
-      <div class="note">
-        <h3><span class="code">大三</span>大學專題：GAN 與 Self-supervised Learning</h3>
-        <p>指導教授 陳伯煒。以 StyleGAN 為基礎調整 loss function，縮小相似樣本間的距離、拉大相異樣本間的距離。</p>
+      <div>
+        <div class="note">
+          <h3><span class="code">2026</span><span lang="en">Explainable AI · FCA Lab</span></h3>
+          <p>診斷 Mamba 模型的 attribution artifact。以 learnable shrinkage function 取代 unrolled network 中固定的 soft-threshold。</p>
+        </div>
+        <div class="note">
+          <h3><span class="code">大三</span>大學專題：GAN 與 Self-supervised Learning</h3>
+          <p>指導教授 陳伯煒。以 StyleGAN 為基礎調整 loss function，縮小相似樣本間的距離、拉大相異樣本間的距離。</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="band" aria-label="數字摘要">
-  <p class="code">KEY FIGURES</p>
+  <p class="en" lang="en">Key Figures</p>
   <div class="band-grid">
-    <div><p class="n">4.08</p><p class="l">碩士累計 GPA（19 學分）</p></div>
+    <div><p class="n">4.08</p><p class="l">碩士累計 GPA，19 學分</p></div>
     <div><p class="n">28 / 146</p><p class="l">學士系排，計至大三下</p></div>
-    <div><p class="n">20 / 181</p><p class="l">總統盃黑客松：181 案中入選決審 20 案</p></div>
+    <div><p class="n">20 / 181</p><p class="l">總統盃黑客松 181 案中入選決審 20 案</p></div>
     <div><p class="n">0.970 → 0</p><p class="l">PCB 檢測 mAP50，更換 image sensor 後</p></div>
     <div><p class="n">709 KB</p><p class="l">FallGuard model size，手機端離線推論</p></div>
     <div><p class="n">+8.8 dB</p><p class="l">相對 LISTA 的重建表現，synthetic signal benchmark</p></div>
   </div>
 </section>
 
-<section class="layer" id="m6" aria-labelledby="h-m6">
-  <div class="rail"><span class="code">M6</span><span class="strip p-m6"></span></div>
+<section class="layer l-m6" id="m6" aria-labelledby="h-m6">
+  <div class="rail"><span class="code">M6</span><span class="strip pat p-m6"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m6">獲獎</h2><p>依日期由新到舊</p></div>
+    <div class="layer-head"><p class="en" lang="en">M6 · Awards</p><h2 id="h-m6">獲獎</h2><p>依日期由新到舊</p></div>
     <div class="award">
       <div class="award-list">
         <article class="card">
           <h3>2026 總統盃黑客松 <span class="nw">決審 20 強</span></h3>
           <dl class="kv">
-            <dt>主辦</dt><dd>總統盃黑客松委員會（召集人：行政院副院長）</dd>
+            <dt>主辦</dt><dd>總統盃黑客松委員會，召集人為行政院副院長</dd>
             <dt>構面</dt><dd>智慧治理</dd>
-            <dt>結果</dt><dd>初審入選決審 20 強（181 案取 20），決審 2026-11-11</dd>
+            <dt>結果</dt><dd>初審自 181 案中入選決審 20 強，決審 2026-11-11</dd>
             <dt>日期</dt><dd>2026-09-17</dd>
           </dl>
         </article>
         <article class="card">
           <h3>2026 臺北大學 AI 智慧跨域整合創作競賽 <span class="nw">優選獎</span></h3>
           <dl class="kv">
-            <dt>主辦</dt><dd>國立臺北大學 × Deloitte</dd>
+            <dt>主辦</dt><dd>國立臺北大學、Deloitte</dd>
             <dt>組別</dt><dd>智慧感測與互動科技組</dd>
             <dt>結果</dt><dd>優選獎，獎金 NT$12,000</dd>
             <dt>日期</dt><dd>2026-06-04 決賽</dd>
@@ -458,43 +578,74 @@ dl.kv dt { color: var(--ink-2); }
           </dl>
         </article>
       </div>
-      <figure class="photos">
-        <img class="portrait" src="img/award.jpg" alt="臺北大學 AI 智慧跨域整合創作競賽頒獎典禮，陳泓光手持優選獎獎金板與頒獎人合影" width="900" height="1066">
-        <img src="img/demo.jpg" alt="決賽現場，陳泓光向後跌坐在軟墊上，手持手機示範跌倒偵測" width="1200" height="1095">
-        <figcaption>上：2026-06-04 頒獎典禮。下：決賽實機示範，以實際跌倒觸發 FallGuard。</figcaption>
-      </figure>
+      <div class="photos">
+        <figure class="fig">
+          <img class="portrait" src="img/award.jpg" alt="臺北大學 AI 智慧跨域整合創作競賽頒獎典禮，陳泓光手持優選獎獎金板與頒獎人合影" width="900" height="1066">
+          <figcaption><span class="code">FIG. M6-1</span>2026-06-04 頒獎典禮。</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="img/demo.jpg" alt="決賽現場，陳泓光向後跌坐在軟墊上，手持手機示範跌倒偵測" width="1200" height="1095">
+          <figcaption><span class="code">FIG. M6-2</span>決賽實機示範，以實際跌倒觸發 FallGuard。</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="layer dense si" id="m5"aria-labelledby="h-m5">
-  <div class="rail"><span class="code">M5</span><span class="strip p-m5"></span></div>
+<section class="layer dense si l-m5" id="m5" aria-labelledby="h-m5">
+  <div class="rail"><span class="code">M5</span><span class="strip pat p-m5"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m5">晶片實作</h2><p>CNN 晶片與 IoTDF 的 RTL 由本人撰寫</p></div>
-    <div class="cards">
-      <article class="card">
-        <h3>CNN Convolution Accelerator</h3>
-        <p class="when">系統晶片實作專題｜三人｜2024</p>
-        <ul>
-          <li>分工：algorithm design、RTL coding、back-end flow。</li>
-          <li>64×64 影像依序執行 3×3 Convolution（zero-padding）＋ReLU、2×2 Max-Pooling、Flatten，由 FSM 控制各層 memory 讀寫。</li>
-          <li>Interleave 兩張輸入影像的 pixel stream，單一 memory channel 同時服務兩者，省去額外的 Line Buffer。</li>
-          <li>以 TSMC 0.13 µm cell library 完成 Logic Synthesis 與 APR（Auto Place &amp; Route），並執行 DRC／LVS。</li>
-        </ul>
+    <div class="layer-head"><p class="en" lang="en">M5 · Silicon</p><h2 id="h-m5">晶片實作</h2><p>CNN 晶片與 IoTDF 的 RTL 由本人撰寫</p></div>
+    <div class="grid2">
+      <article class="card split span2">
+        <div>
+          <h3 lang="en">CNN Convolution Accelerator</h3>
+          <p class="when">系統晶片實作專題｜三人｜2024</p>
+          <ul>
+            <li>分工：algorithm design、RTL coding、back-end flow。</li>
+            <li>64×64 影像依序經過含 zero-padding 的 3×3 Convolution 與 ReLU、2×2 Max-Pooling、Flatten，由 FSM 控制各層 memory 讀寫。</li>
+            <li>Interleave 兩張輸入影像的 pixel stream，單一 memory channel 同時服務兩者，省去額外的 Line Buffer。</li>
+            <li>以 TSMC 0.13 µm cell library 完成 Logic Synthesis 與 Auto Place &amp; Route，並執行 DRC 與 LVS。</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 300" role="img" aria-label="CNN 加速晶片示意：zero-padding 的 3×3 卷積視窗、兩張影像交錯的 pixel stream 與運算流程">
+            <defs><marker id="arB" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
+            <text class="svg-c" x="16" y="20">ZERO-PADDING · 3×3 KERNEL</text>
+            <g id="grid"></g>
+            <rect class="svg-hi" x="16" y="30" width="66" height="66" rx="3"/>
+            <text class="svg-s" x="16" y="182">輸入影像 64×64</text>
+            <text class="svg-c" x="16" y="214">INTERLEAVED PIXEL STREAM</text>
+            <g id="stream"></g>
+            <path class="svg-line" d="M330 244 H352" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="354" y="226" width="150" height="36" rx="6"/>
+            <text class="svg-t" x="429" y="249" text-anchor="middle">single memory channel</text>
+            <rect class="svg-hi" x="300" y="30" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="53" text-anchor="middle">Conv 3×3 + ReLU</text>
+            <path class="svg-line" d="M402 66 V86" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="300" y="88" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="111" text-anchor="middle">Max-Pooling 2×2</text>
+            <path class="svg-line" d="M402 124 V144" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="300" y="146" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="169" text-anchor="middle">Flatten</text>
+            <text class="svg-s" x="300" y="202">FSM 控制各層 memory 讀寫</text>
+          </svg>
+          <figcaption><span class="code">FIG. M5-1</span>資料路徑：zero-padding 卷積與交錯 pixel stream。</figcaption>
+        </figure>
       </article>
       <article class="card">
-        <h3>IoT Data Filtering（IoTDF）</h3>
-        <p class="when">實用數位系統設計 期末專題｜團隊｜課程成績 A+</p>
+        <h3 lang="en">IoT Data Filtering · IoTDF</h3>
+        <p class="when">實用數位系統設計期末專題｜團隊｜課程成績 A+</p>
         <ul>
           <li>以 Verilog 撰寫 IoTDF 的 RTL，完成 functional verification 與 logic synthesis。</li>
           <li>期末報告以英文撰寫：algorithm、architecture、verification flow、synthesis constraints、coverage check。</li>
         </ul>
       </article>
       <article class="card">
-        <h3>edge-rtl-agent</h3>
+        <h3 lang="en">edge-rtl-agent</h3>
         <p class="when">公開倉庫</p>
         <ul>
-          <li>Local-first closed-loop RTL generation on a consumer 6GB GPU：small LLMs × open-source EDA（VerilogEval v2、LibreLane、sky130）。</li>
+          <li lang="en">Local-first closed-loop RTL generation on a consumer 6GB GPU：small LLMs × open-source EDA；VerilogEval v2、LibreLane、sky130。</li>
         </ul>
         <a class="link" href="https://github.com/a413123a413123/edge-rtl-agent">github.com/a413123a413123/edge-rtl-agent</a>
       </article>
@@ -502,10 +653,10 @@ dl.kv dt { color: var(--ink-2); }
   </div>
 </section>
 
-<section class="layer dense si" id="m4"aria-labelledby="h-m4">
-  <div class="rail"><span class="code">M4</span><span class="strip p-m4"></span></div>
+<section class="layer dense si l-m4" id="m4" aria-labelledby="h-m4">
+  <div class="rail"><span class="code">M4</span><span class="strip pat p-m4"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m4">修課</h2><p>成績依成績單與學程證書</p></div>
+    <div class="layer-head"><p class="en" lang="en">M4 · Coursework</p><h2 id="h-m4">修課</h2><p>成績依成績單與學程證書</p></div>
     <div class="courses">
       <div class="sheet-wrap">
         <table>
@@ -548,16 +699,17 @@ dl.kv dt { color: var(--ink-2); }
             <tr><td>數位系統設計</td><td class="grade top">A+</td></tr>
             <tr><td>實用數位系統設計</td><td class="grade top">A+</td></tr>
             <tr><td>高可靠度系統之設計、測試與應用</td><td class="grade top">A+</td></tr>
-            <tr><td>電路學（一）</td><td class="grade top">A+</td></tr>
-            <tr><td>電子學（一）</td><td class="grade">B+</td></tr>
+            <tr><td>電路學一</td><td class="grade top">A+</td></tr>
+            <tr><td>電子學一</td><td class="grade">B+</td></tr>
             <tr><td>系統晶片測試</td><td class="grade">A−</td></tr>
-            <tr><td>演算法基礎（英語授課，國際線上課程）</td><td class="grade">抵免</td></tr>
-            <tr><td>演算法進階與複雜度（同上）</td><td class="grade">抵免</td></tr>
-            <tr><td>圖論演算法（同上）</td><td class="grade">抵免</td></tr>
-            <tr><td>數位系統：從邏輯閘到處理器（同上）</td><td class="grade">抵免</td></tr>
-            <tr><td>硬體安全（同上）</td><td class="grade">抵免</td></tr>
+            <tr><td>演算法基礎</td><td class="grade">抵免</td></tr>
+            <tr><td>演算法進階與複雜度</td><td class="grade">抵免</td></tr>
+            <tr><td>圖論演算法</td><td class="grade">抵免</td></tr>
+            <tr><td>數位系統：從邏輯閘到處理器</td><td class="grade">抵免</td></tr>
+            <tr><td>硬體安全</td><td class="grade">抵免</td></tr>
           </tbody>
         </table>
+        <p class="tnote">標示抵免者為英語授課的國際線上課程。</p>
       </div>
       <div>
         <div class="sheet-wrap">
@@ -571,108 +723,110 @@ dl.kv dt { color: var(--ink-2); }
             </tbody>
           </table>
         </div>
-        <div class="sheet-wrap" style="margin-top: var(--s5)">
-          <table>
-            <caption>Coursera｜UC San Diego Data Structures and Algorithms Specialization｜2024-08-19</caption>
-            <thead><tr><th scope="col">課程</th><th scope="col">狀態</th></tr></thead>
-            <tbody lang="en">
-              <tr><td>Algorithmic Toolbox</td><td class="grade">完成</td></tr>
-              <tr><td>Data Structures</td><td class="grade">完成</td></tr>
-              <tr><td>Algorithms on Graphs</td><td class="grade">完成</td></tr>
-              <tr><td>Algorithms on Strings</td><td class="grade">完成</td></tr>
-              <tr><td>Advanced Algorithms and Complexity</td><td class="grade">完成</td></tr>
-              <tr><td>Genome Assembly Programming Challenge</td><td class="grade">完成</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <figure class="fig" style="margin-top: var(--s5)">
+          <img src="img/coursera.jpg" alt="Coursera 學程證書：UC San Diego Data Structures and Algorithms Specialization，2024 年 8 月 19 日，六門課" width="1000" height="786">
+          <figcaption><span class="code">FIG. M4-1</span><span lang="en">UC San Diego Data Structures and Algorithms Specialization</span>，Coursera 六門課，2024-08-19 完成。</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="layer" id="m3" aria-labelledby="h-m3">
-  <div class="rail"><span class="code">M3</span><span class="strip p-m3"></span></div>
+<section class="layer l-m3" id="m3" aria-labelledby="h-m3">
+  <div class="rail"><span class="code">M3</span><span class="strip pat p-m3"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m3">教學與團隊</h2></div>
-    <div class="cards">
-      <article class="card">
-        <h3>台積 SDG 悅讀 AI 半導體科普團 講師</h3>
-        <p class="when">陽明交大 BeLight｜2026-05 至 07</p>
-        <ul>
-          <li>2026-05 完成講師培訓（5/12、5/19、5/26）。</li>
-          <li>三民國中 AI 半導體研習營兩天 12 節中主講 4 節：開場導論、半導體產業鏈、IC 設計與 EDA、百工百業做 AI。</li>
-          <li>互動教材網站 7 個單元：關卡與 spec 由本人設計並驗收，程式由 AI coding agents 依 spec 產出。</li>
-          <li>營隊結束後向主辦單位提交 8 頁缺口分析與後續開發建議。</li>
-        </ul>
-        <a class="link" href="https://a413123a413123.github.io/ai-lessons/">a413123a413123.github.io/ai-lessons</a>
+    <div class="layer-head"><p class="en" lang="en">M3 · Teaching &amp; Teams</p><h2 id="h-m3">教學與團隊</h2></div>
+    <div class="grid2">
+      <article class="card split span2">
+        <div>
+          <h3>台積 SDG 悅讀 AI 半導體科普團 講師</h3>
+          <p class="when">陽明交大 BeLight｜2026-05 至 07</p>
+          <ul>
+            <li>2026-05 完成講師培訓，日期為 5/12、5/19、5/26。</li>
+            <li>三民國中 AI 半導體研習營兩天 12 節中主講 4 節：開場導論、半導體產業鏈、IC 設計與 EDA、百工百業做 AI。</li>
+            <li>互動教材網站 7 個單元：關卡與 spec 由本人設計並驗收，程式由 AI coding agents 依 spec 產出。</li>
+            <li>營隊結束後向主辦單位提交 8 頁缺口分析與後續開發建議。</li>
+          </ul>
+          <a class="link" href="https://a413123a413123.github.io/ai-lessons/">a413123a413123.github.io/ai-lessons</a>
+        </div>
+        <figure class="fig">
+          <img src="img/ai-lessons.jpg" alt="AI 半導體互動教材網站首頁，列出 AI 怎麼運作與 AI 與晶片兩組單元" width="1200" height="703">
+          <figcaption><span class="code">FIG. M3-1</span>互動教材網站首頁。</figcaption>
+        </figure>
       </article>
       <article class="card">
         <h3>公開教材整理</h3>
-        <p class="when">GitHub Pages</p>
+        <p class="when" lang="en">GitHub Pages</p>
         <ul>
           <li><a href="https://a413123a413123.github.io/seven-cycles-textbook/">七拍教材</a>：IC 設計 Agent 七單元，由數位邏輯、Verilog、EDA 到 LLM 閉環、評測、地端量化與 Agent 工程。</li>
           <li><a href="https://a413123a413123.github.io/kittel-solid-state/">Kittel 固態物理導讀</a>：第 8 版 22 章逐章整理，199 條公式標註頁碼與式號，附熱容專題。</li>
-          <li><a href="https://a413123a413123.github.io/cth-thermal-capacitance/">Thermal Capacitance（Cth）</a>：FinFET self-heating 量測的熱學基礎，五個單元，含推導、算例與自我檢核。</li>
+          <li><a href="https://a413123a413123.github.io/cth-thermal-capacitance/">Thermal Capacitance Cth</a>：FinFET self-heating 量測的熱學基礎，五個單元，含推導、算例與自我檢核。</li>
         </ul>
       </article>
       <article class="card">
         <h3>團隊與幹部</h3>
         <ul>
           <li>2026 總統盃黑客松 FCA LAB 隊長，十人跨校團隊。</li>
-          <li>FCA Lab 伺服器維護（2026-03 起）。</li>
-          <li>中山電機系學會顧問（大二下起），協助舉辦系上活動。</li>
-          <li>2023-03 中山電機三校四系聯合系烤總召集人。</li>
+          <li>2026-03 起負責 FCA Lab 伺服器維護。</li>
+          <li>大二下起擔任中山電機系學會顧問，協助舉辦系上活動。</li>
+          <li>2023-03 擔任中山電機三校四系聯合系烤總召集人。</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<section class="layer sparse" id="m2" aria-labelledby="h-m2">
-  <div class="rail"><span class="code">M2</span><span class="strip p-m2"></span></div>
+<section class="layer sparse l-m2" id="m2" aria-labelledby="h-m2">
+  <div class="rail"><span class="code">M2</span><span class="strip pat p-m2"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m2">學歷</h2></div>
+    <div class="layer-head"><p class="en" lang="en">M2 · Education</p><h2 id="h-m2">學歷</h2></div>
     <div class="schools">
       <div class="school">
-        <h3>國立陽明交通大學</h3>
-        <p class="dept">人工智慧技術與應用碩士學位學程</p>
-        <p class="meta"><span>2025–2027（預計）</span><span>GPA <b class="num">4.08</b>（累計 19 學分）</span><span>FCA Lab，指導教授 黃經堯</span></p>
+        <p class="yrs">2025–2027</p>
+        <div>
+          <h3>國立陽明交通大學</h3>
+          <p class="dept">人工智慧技術與應用碩士學位學程</p>
+          <p class="meta"><span>預計 2027 畢業</span><span>GPA <b class="num">4.08</b>｜累計 19 學分</span><span>FCA Lab，指導教授 黃經堯</span></p>
+        </div>
       </div>
       <div class="school">
-        <h3>國立中山大學</h3>
-        <p class="dept">電機工程學系 學士</p>
-        <p class="meta"><span>2021–2025</span><span>GPA <b class="num">3.90</b> / 4.3</span><span>系排 <b class="num">28 / 146</b>（前 19.2%，計至大三下）</span><span>最佳學期 GPA <b class="num">4.24</b>、班排第 4（大三下）</span></p>
+        <p class="yrs">2021–2025</p>
+        <div>
+          <h3>國立中山大學</h3>
+          <p class="dept">電機工程學系 學士</p>
+          <p class="meta"><span>GPA <b class="num">3.90</b> / 4.3</span><span>系排 <b class="num">28 / 146</b>｜前 19.2%｜計至大三下</span><span>最佳學期 GPA <b class="num">4.24</b>｜大三下班排第 4</span></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="layer dense si" id="m1"aria-labelledby="h-m1">
-  <div class="rail"><span class="code">M1</span><span class="strip p-m1"></span></div>
+<section class="layer dense si l-m1" id="m1" aria-labelledby="h-m1">
+  <div class="rail"><span class="code">M1</span><span class="strip pat p-m1"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-m1">工具</h2></div>
+    <div class="layer-head"><p class="en" lang="en">M1 · Toolchain</p><h2 id="h-m1">工具</h2></div>
     <dl class="tools">
-      <dt>Hardware</dt><dd>Verilog RTL、Logic Synthesis、SpyGlass Lint、APR／DRC／LVS；Quartus、LTspice、ADS2021</dd>
-      <dt>Embedded</dt><dd>Keil uVision；以 M487JIDAE 開發板讀取 ADC 數值控制 stepper motor 轉速</dd>
-      <dt>Software &amp; ML</dt><dd>Python、C++、PyTorch、ONNX Runtime、YOLOv8、LightGBM、FastAPI、Flutter、Android</dd>
-      <dt>AI Agents</dt><dd>Claude Code、Claude Agent SDK、OpenAI Codex、Gemini、Ollama；multi-agent orchestration、task-card contract、acceptance test 與 anti-hallucination gate</dd>
-      <dt>Workflow</dt><dd>RTL 親自撰寫。軟體與 ML 專案以 AI coding agents 協作開發，spec、任務拆解與 acceptance 由本人負責。</dd>
+      <dt lang="en">Hardware</dt><dd>Verilog RTL、Logic Synthesis、SpyGlass Lint、APR、DRC、LVS；Quartus、LTspice、ADS2021</dd>
+      <dt lang="en">Embedded</dt><dd>Keil uVision；以 M487JIDAE 開發板讀取 ADC 數值控制 stepper motor 轉速</dd>
+      <dt lang="en">Software &amp; ML</dt><dd>Python、C++、PyTorch、ONNX Runtime、YOLOv8、LightGBM、FastAPI、Flutter、Android</dd>
+      <dt lang="en">AI Agents</dt><dd>Claude Code、Claude Agent SDK、OpenAI Codex、Gemini、Ollama；multi-agent orchestration、task-card contract、acceptance test 與 anti-hallucination gate</dd>
+      <dt lang="en">Workflow</dt><dd>RTL 親自撰寫。軟體與 ML 專案以 AI coding agents 協作開發，spec、任務拆解與 acceptance 由本人負責。</dd>
     </dl>
     <div class="repos">
-      <h3>Public Repositories</h3>
+      <h3 lang="en">Public Repositories</h3>
       <div class="sheet-wrap">
         <table>
-          <thead><tr><th scope="col">Repository</th><th scope="col">說明</th></tr></thead>
+          <thead><tr><th scope="col" lang="en">Repository</th><th scope="col">說明</th></tr></thead>
           <tbody>
             <tr><td><a href="https://github.com/a413123a413123/pcb-coldstart-benchmark">pcb-coldstart-benchmark</a></td><td>IMPACT-IAAC 2026 論文的實驗程式</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/fallguard-demo">fallguard-demo</a></td><td>FallGuard on-device fall detection demo，臺北大學競賽作品</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/edge-rtl-agent">edge-rtl-agent</a></td><td>Local-first closed-loop RTL generation on a 6GB GPU，small LLMs 搭配 open-source EDA</td></tr>
-            <tr><td><a href="https://github.com/a413123a413123/finfet-she-tcad-calibration">finfet-she-tcad-calibration</a></td><td>87 篇 Si FinFET self-heating effect（SHE）文獻逐篇整理，用於 calibrate 飽和區 SHE 的 TCAD deck</td></tr>
+            <tr><td><a href="https://github.com/a413123a413123/finfet-she-tcad-calibration">finfet-she-tcad-calibration</a></td><td>87 篇 Si FinFET self-heating effect 文獻逐篇整理，用於 calibrate 飽和區 SHE 的 TCAD deck</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/GAAFET-TCAD">GAAFET-TCAD</a></td><td>GAAFET 量測文獻盤點與 Sentaurus TCAD calibration 規劃</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/seven-cycles-textbook">seven-cycles-textbook</a></td><td>七拍教材，IC 設計 Agent 七單元</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/ai-lessons">ai-lessons</a></td><td>AI 半導體研習營互動教材</td></tr>
             <tr><td><a href="https://github.com/a413123a413123/kittel-solid-state">kittel-solid-state</a></td><td>Kittel 固態物理逐章導讀</td></tr>
-            <tr><td><a href="https://github.com/a413123a413123/cth-thermal-capacitance">cth-thermal-capacitance</a></td><td>Thermal Capacitance（Cth）五單元教材</td></tr>
+            <tr><td><a href="https://github.com/a413123a413123/cth-thermal-capacitance">cth-thermal-capacitance</a></td><td>Thermal Capacitance Cth 五單元教材</td></tr>
           </tbody>
         </table>
       </div>
@@ -680,31 +834,38 @@ dl.kv dt { color: var(--ink-2); }
   </div>
 </section>
 
-<section class="layer" id="sub" aria-labelledby="h-sub">
-  <div class="rail"><span class="code">SUB</span><span class="strip p-sub"></span></div>
+<section class="layer l-sub" id="sub" aria-labelledby="h-sub">
+  <div class="rail"><span class="code">SUB</span><span class="strip pat p-sub"></span></div>
   <div>
-    <div class="layer-head"><h2 id="h-sub">基礎</h2><p>中學時期</p></div>
-    <div class="cards">
-      <article class="card">
-        <h3>數學競賽</h3>
-        <ul>
-          <li>2016 AMC12B 97.5 分，成績表現「非常優良」，獲邀參加 AIME 美國數學邀請賽。</li>
-          <li>2011 第九屆 JHMC 國中數學競賽，台南地區團體三等獎。</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>幹部</h3>
-        <ul>
-          <li>港明高中 第二屆班級代表聯合自治會會長（高二）。</li>
-          <li>港明高中 合唱團社長。</li>
-        </ul>
-      </article>
+    <div class="layer-head"><p class="en" lang="en">SUB · Foundation</p><h2 id="h-sub">基礎</h2><p>中學時期</p></div>
+    <div class="grid2">
+      <div class="award-list">
+        <article class="card">
+          <h3>數學競賽</h3>
+          <ul>
+            <li>2016 AMC12B 97.5 分，成績表現「非常優良」，獲邀參加 AIME 美國數學邀請賽。</li>
+            <li>2011 第九屆 JHMC 國中數學競賽，台南地區團體三等獎。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>幹部</h3>
+          <ul>
+            <li>港明高中第二屆班級代表聯合自治會會長，高二任期。</li>
+            <li>港明高中合唱團社長。</li>
+          </ul>
+        </article>
+      </div>
+      <figure class="fig">
+        <img src="img/jhmc.jpg" alt="九九文教基金會頒發的第九屆 JHMC 國中數學競賽台南地區團體三等獎獎狀" width="900" height="675">
+        <figcaption><span class="code">FIG. SUB-1</span>第九屆 JHMC 國中數學競賽獎狀，2011-12-17。</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<footer class="contact" id="contact">
-  <p class="code">CONTACT</p>
+<footer class="contact l-m7" id="contact">
+  <p class="en" lang="en" style="color: var(--lc)">Contact</p>
+  <h2>聯絡</h2>
   <ul>
     <li><a href="mailto:a413123a413123@gmail.com">a413123a413123@gmail.com</a></li>
     <li><a href="https://github.com/a413123a413123">github.com/a413123a413123</a></li>
@@ -731,27 +892,118 @@ dl.kv dt { color: var(--ink-2); }
   });
 })();
 
+// 示意圖：卷積格與交錯 pixel stream 用程式產生，避免手寫 49 個格子
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text) e.textContent = text;
+    return e;
+  }
+  var grid = document.getElementById('grid');
+  if (grid) {
+    // 7×7：外圈為 zero-padding，內部 5×5 為影像
+    for (var r = 0; r < 7; r++) for (var c = 0; c < 7; c++) {
+      var pad = r === 0 || c === 0 || r === 6 || c === 6;
+      grid.appendChild(el('rect', { x: 16 + c * 22, y: 30 + r * 22, width: 20, height: 20, rx: 2, 'class': pad ? 'svg-pad' : 'svg-cell' }));
+      if (pad) grid.appendChild(el('text', { x: 26 + c * 22, y: 44 + r * 22, 'text-anchor': 'middle', 'class': 'svg-s' }, '0'));
+    }
+  }
+  var stream = document.getElementById('stream');
+  if (stream) {
+    // A、B 兩張影像的 pixel 交錯送入同一個 memory channel
+    var labels = ['A0', 'B0', 'A1', 'B1', 'A2', 'B2', 'A3', 'B3'];
+    labels.forEach(function (t, i) {
+      var isA = t.charAt(0) === 'A';
+      stream.appendChild(el('rect', { x: 16 + i * 38, y: 226, width: 34, height: 36, rx: 4, 'class': isA ? 'svg-hi' : 'svg-box' }));
+      stream.appendChild(el('text', { x: 33 + i * 38, y: 249, 'text-anchor': 'middle', 'class': 'svg-t' }, t));
+    });
+  }
+})();
+
+// via 柱：每兩層之間放三根，位置逐層錯開
+(function () {
+  var host = document.getElementById('vias');
+  if (!host) return;
+  var spots = [[0.2, 0.25], [0.75, 0.3], [0.5, 0.72], [0.28, 0.68], [0.7, 0.75], [0.45, 0.22]];
+  for (var i = 0; i < 8; i++) {
+    for (var k = 0; k < 3; k++) {
+      var p = spots[(i + k * 2) % spots.length];
+      var v = document.createElement('div');
+      v.className = 'via';
+      v.style.setProperty('--i', i);
+      v.style.setProperty('--d', (-((i * 3 + k) % 8) * 0.3) + 's');
+      v.style.left = (p[0] * 100) + '%';
+      v.style.top = (p[1] * 100) + '%';
+      v.appendChild(document.createElement('i'));
+      v.appendChild(document.createElement('i'));
+      host.parentNode.insertBefore(v, host);
+    }
+  }
+})();
+
+// 首屏動態：捲動時層板拆開（爆炸圖），游標移動時整組傾斜；兩者都用 rAF 平滑
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hero = document.getElementById('top'), stack = document.getElementById('stack'), tilt = document.getElementById('tilt');
+  if (!hero || !stack || !tilt) return;
+  var target = { x: 0, y: 0 }, cur = { x: 0, y: 0 }, explode = 0, ticking = false;
+  function onScroll() {
+    // 首屏捲過 70% 時完全拆開
+    var p = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.7)));
+    explode = p;
+    request();
+  }
+  function onMove(e) {
+    var r = hero.getBoundingClientRect();
+    target.x = ((e.clientY - r.top) / r.height - 0.5) * -10;
+    target.y = ((e.clientX - r.left) / r.width - 0.5) * 14;
+    request();
+  }
+  function onLeave() { target.x = 0; target.y = 0; request(); }
+  function request() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  function frame() {
+    ticking = false;
+    cur.x += (target.x - cur.x) * 0.12;
+    cur.y += (target.y - cur.y) * 0.12;
+    tilt.style.setProperty('--tx', cur.x.toFixed(2) + 'deg');
+    tilt.style.setProperty('--ty', cur.y.toFixed(2) + 'deg');
+    stack.style.setProperty('--explode', explode.toFixed(3));
+    if (Math.abs(target.x - cur.x) > 0.05 || Math.abs(target.y - cur.y) > 0.05) request();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  hero.addEventListener('pointermove', onMove);
+  hero.addEventListener('pointerleave', onLeave);
+  onScroll();
+})();
+
 // 圖層清單 ↔ 堆疊層板：滑過或聚焦清單項目時，對應層板浮起；點層板捲到該段
 (function () {
-  var plates = {};
-  document.querySelectorAll('.plate').forEach(function (p) {
-    plates[p.dataset.layer] = p;
-    p.addEventListener('click', function () {
-      document.getElementById(p.dataset.layer).scrollIntoView();
-    });
+  var slabs = {};
+  document.querySelectorAll('.slab').forEach(function (s) {
+    slabs[s.dataset.layer] = s;
+    s.addEventListener('click', function () { document.getElementById(s.dataset.layer).scrollIntoView(); });
   });
   document.querySelectorAll('.lsw a').forEach(function (a) {
-    var p = plates[a.dataset.layer];
-    function on() { p.classList.add('hot'); }
-    function off() { p.classList.remove('hot'); }
+    var s = slabs[a.dataset.layer];
+    function on() { s.classList.add('hot'); }
+    function off() { s.classList.remove('hot'); }
     a.addEventListener('mouseenter', on); a.addEventListener('mouseleave', off);
     a.addEventListener('focus', on); a.addEventListener('blur', off);
   });
-
-  // 捲動時標示目前所在的層
   var links = {};
   document.querySelectorAll('.lsw a').forEach(function (a) { links[a.dataset.layer] = a; });
   if (!('IntersectionObserver' in window)) return;
+  // 層軌沉積：只在允許動態時啟用，段落進入畫面就標上 .in
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!calm) {
+    document.documentElement.classList.add('js-anim');
+    var dep = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); dep.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+    document.querySelectorAll('.layer').forEach(function (s) { dep.observe(s); });
+  }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
