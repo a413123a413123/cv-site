@@ -269,6 +269,8 @@ dl.kv dd { max-width: 36em; }
 .award { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s6); max-width: 1160px; align-items: start; }
 .award-list { display: grid; gap: var(--s5); }
 .certs { display: grid; gap: var(--s5); max-width: 1160px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); max-width: 1160px; align-items: start; }
+.block-h { font-size: var(--fs-h3); font-weight: 600; line-height: 1.4; margin: var(--s7) 0 var(--s4); }
 .photos { display: grid; gap: var(--s4); }
 .photos img { aspect-ratio: 4 / 3; object-fit: cover; }
 .photos img.portrait { object-position: 50% 30%; }
@@ -320,7 +322,7 @@ dl.kv dd { max-width: 36em; }
   .rail .strip { width: 100%; height: 10px; min-height: 0; }
   .band { padding: var(--s8) var(--s4); }
   .band-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .grid2, .award, .courses, .notes, .paper, .card.split { grid-template-columns: minmax(0, 1fr); }
+  .grid2, .grid3, .award, .courses, .notes, .paper, .card.split { grid-template-columns: minmax(0, 1fr); }
   .contact { padding: var(--s8) var(--s4); }
   .tools { grid-template-columns: minmax(0, 1fr); gap: var(--s1); }
   .tools dd { margin-bottom: var(--s3); }
@@ -372,7 +374,7 @@ dl.kv dd { max-width: 36em; }
     <p class="affil">國立陽明交通大學<br>人工智慧技術與應用碩士學位學程
       <small>FCA Lab｜指導教授 黃經堯｜2025–2027 預計畢業</small></p>
     <ul class="facts">
-      <li class="l-m7"><span class="en" lang="en" style="color: var(--lc)">M7 · Research</span><span>IMPACT-IAAC 2026 論文 第一作者暨通訊作者</span></li>
+      <li class="l-m7"><span class="en" lang="en" style="color: var(--lc)">M7 · Research</span><span>IMPACT-IAAC 2026 口頭發表論文 第一作者暨通訊作者</span></li>
       <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 總統盃黑客松 入選決審 20 強</span></li>
       <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 臺北大學 AI 智慧跨域整合創作競賽 優選獎</span></li>
     </ul>
@@ -433,7 +435,7 @@ dl.kv dd { max-width: 36em; }
         <dl class="kv">
           <dt>作者</dt><dd>Hong-Guang Chen 為第一作者暨通訊作者，共同作者 Cheng-Yu Yen、Ching-Yao Huang</dd>
           <dt>會議</dt><dd>IMPACT-IAAC 2026，第 21 屆 International Microsystems, Packaging, Assembly and Circuits Technology Conference，2026-10-19 至 22，台北南港展覽館</dd>
-          <dt>狀態</dt><dd>2026-07-22 經三位審查人 blind review 錄取，排定 Oral Presentation，Paper ID TW0145；2026-10-06 完成 IEEE Electronic Publication Agreement</dd>
+          <dt>狀態</dt><dd>2026-07-22 經三位審查人 blind review 錄取；2026-10-21 於 S41 Smart Manufacturing, Inspection and Testing 場次口頭發表，Paper ID TW0145；2026-10-06 完成 IEEE Electronic Publication Agreement</dd>
           <dt>結果</dt><dd>模型更換 board layout 後表現維持；更換 image sensor 後 mAP50 由 0.970 降至 0.000。論文據此提出新產品導入 NPI 時的 sensor 選型準則。</dd>
           <dt>程式碼</dt><dd><a href="https://github.com/a413123a413123/pcb-coldstart-benchmark">github.com/a413123a413123/pcb-coldstart-benchmark</a></dd>
         </dl>
@@ -636,6 +638,33 @@ dl.kv dd { max-width: 36em; }
           </tbody>
         </table>
       </div>
+    </div>
+    <h3 class="block-h">期末專題</h3>
+    <div class="grid3">
+      <article class="card">
+        <h3 lang="en">Identity Preservation in Training-free Diffusion Editing</h3>
+        <p class="when">電腦視覺期末專題｜7 人小組</p>
+        <ul>
+          <li>提出校準評估協定：以 ArcFace 的異身分下限與同臉上限校準身分分數，並以 directional CLIP 量測編輯幅度。</li>
+          <li>在 25 張 CelebA-HQ 真實人臉上，self-attention injection 的身分分數提升伴隨編輯被壓抑；三種編輯的趨勢檢定 Page's L = 190，p = 4.5×10⁻⁶。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>觸覺點字的神經形態辨識</h3>
+        <p class="when">仿神經形態積體電路與系統期末專題｜團隊</p>
+        <ul>
+          <li>以 ideal spike encoder 將觸覺壓力訊號轉成 spike，與資料集提供的參考 spike 資料比對，spike count 一致度 99.99%。</li>
+          <li>held-out 測試準確率：recurrent SNN 68.33%，以 spike 為輸入的 SSM 74.44%。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 lang="en">KAN-ECG</h3>
+        <p class="when">深度學習課程期末專題｜個人</p>
+        <ul>
+          <li>以 Kolmogorov-Arnold Network 分類 MIT-BIH Arrhythmia Database 的 N、S、V、F 四類心跳，採 inter-patient 切分。</li>
+          <li>KAN-Small 參數 40,768，約為 ResNet-small 79,060 的一半。Macro-F1 為 40.67%，單一 seed；ResNet-small 五個 seed 平均 42.29%。</li>
+        </ul>
+      </article>
     </div>
     <article class="card" style="margin-top: var(--s5); max-width: 1160px">
         <h3><span lang="en">ICLAB</span> <span class="muted">·</span> <span lang="en">Integrated Circuit Design Laboratory</span></h3>
