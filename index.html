@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
 <!-- 中文襯線只用在姓名與段落標題，以 text= 只下載用到的字 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap&text=陳泓光進行中研究獲獎晶片實作修課教學與團隊歷工具基礎聯絡" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap&text=陳泓光證書研究獲獎晶片實作修課教學與團隊歷工具基礎聯絡" rel="stylesheet">
 <style>
 /* ── token：預設為深色畫布；淺色主題為淺藍晶圓面，兩者皆非白底 ── */
 :root {
@@ -212,7 +212,7 @@ main { min-width: 0; }
 .card h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.45; }
 .card .when { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s1); }
 .card ul { margin-top: var(--s4); display: grid; gap: var(--s2); }
-.card li { position: relative; padding-left: var(--s4); }
+.card li { position: relative; padding-left: var(--s4); max-width: 36em; }
 .card li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; background: var(--lc); }
 .card .link { display: inline-block; margin-top: var(--s4); font-size: var(--fs-small); }
 .card.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s6); align-items: center; }
@@ -268,6 +268,7 @@ dl.kv dd { max-width: 36em; }
 /* 獲獎 */
 .award { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s6); max-width: 1160px; align-items: start; }
 .award-list { display: grid; gap: var(--s5); }
+.certs { display: grid; gap: var(--s5); max-width: 1160px; }
 .photos { display: grid; gap: var(--s4); }
 .photos img { aspect-ratio: 4 / 3; object-fit: cover; }
 .photos img.portrait { object-position: 50% 30%; }
@@ -346,13 +347,13 @@ dl.kv dd { max-width: 36em; }
 <nav class="lsw" aria-label="圖層導覽">
   <div class="lsw-head"><strong>Layers</strong><span class="en" lang="en">M8 → SUB</span></div>
   <ol>
-    <li><a href="#m8" data-layer="m8" class="l-m8"><span class="swatch pat p-m8"></span><span class="code">M8</span><span class="names"><span>進行中</span><span class="en" lang="en">Now</span></span></a></li>
+    <li><a href="#m8" data-layer="m8" class="l-m8"><span class="swatch pat p-m8"></span><span class="code">M8</span><span class="names"><span>學歷</span><span class="en" lang="en">Education</span></span></a></li>
     <li><a href="#m7" data-layer="m7" class="l-m7"><span class="swatch pat p-m7"></span><span class="code">M7</span><span class="names"><span>研究</span><span class="en" lang="en">Research</span></span></a></li>
     <li><a href="#m6" data-layer="m6" class="l-m6"><span class="swatch pat p-m6"></span><span class="code">M6</span><span class="names"><span>獲獎</span><span class="en" lang="en">Awards</span></span></a></li>
-    <li><a href="#m5" data-layer="m5" class="l-m5"><span class="swatch pat p-m5"></span><span class="code">M5</span><span class="names"><span>晶片實作</span><span class="en" lang="en">Silicon</span></span></a></li>
-    <li><a href="#m4" data-layer="m4" class="l-m4"><span class="swatch pat p-m4"></span><span class="code">M4</span><span class="names"><span>修課</span><span class="en" lang="en">Coursework</span></span></a></li>
-    <li><a href="#m3" data-layer="m3" class="l-m3"><span class="swatch pat p-m3"></span><span class="code">M3</span><span class="names"><span>教學與團隊</span><span class="en" lang="en">Teaching &amp; Teams</span></span></a></li>
-    <li><a href="#m2" data-layer="m2" class="l-m2"><span class="swatch pat p-m2"></span><span class="code">M2</span><span class="names"><span>學歷</span><span class="en" lang="en">Education</span></span></a></li>
+    <li><a href="#m5" data-layer="m5" class="l-m5"><span class="swatch pat p-m5"></span><span class="code">M5</span><span class="names"><span>修課</span><span class="en" lang="en">Coursework</span></span></a></li>
+    <li><a href="#m4" data-layer="m4" class="l-m4"><span class="swatch pat p-m4"></span><span class="code">M4</span><span class="names"><span>證書</span><span class="en" lang="en">Certificates</span></span></a></li>
+    <li><a href="#m3" data-layer="m3" class="l-m3"><span class="swatch pat p-m3"></span><span class="code">M3</span><span class="names"><span>晶片實作</span><span class="en" lang="en">Silicon</span></span></a></li>
+    <li><a href="#m2" data-layer="m2" class="l-m2"><span class="swatch pat p-m2"></span><span class="code">M2</span><span class="names"><span>教學與團隊</span><span class="en" lang="en">Teaching &amp; Teams</span></span></a></li>
     <li><a href="#m1" data-layer="m1" class="l-m1"><span class="swatch pat p-m1"></span><span class="code">M1</span><span class="names"><span>工具</span><span class="en" lang="en">Toolchain</span></span></a></li>
     <li><a href="#sub" data-layer="sub" class="l-sub"><span class="swatch pat p-sub"></span><span class="code">SUB</span><span class="names"><span>基礎</span><span class="en" lang="en">Foundation</span></span></a></li>
   </ol>
@@ -375,7 +376,7 @@ dl.kv dd { max-width: 36em; }
       <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 總統盃黑客松 入選決審 20 強</span></li>
       <li class="l-m6"><span class="en" lang="en" style="color: var(--lc)">M6 · Awards</span><span>2026 臺北大學 AI 智慧跨域整合創作競賽 優選獎</span></li>
     </ul>
-    <p class="reading">頁面順序依照晶片的 metal stack：頂層 M8 是進行中的工作，往下依序是研究、獲獎、晶片實作、修課、教學與團隊、學歷與工具，最底層 SUB 是中學時期。滑過左側 Layer 清單，右側 stack 會浮起對應的層。</p>
+    <p class="reading">頁面順序依照晶片的 metal stack：頂層 M8 是學歷，往下依序是研究、獲獎、修課、證書、晶片實作、教學與團隊、工具，最底層 SUB 是中學時期。滑過左側 Layer 清單，右側 stack 會浮起對應的層。</p>
   </div>
   <div class="stack-wrap" aria-hidden="true">
     <div class="tilt" id="tilt">
@@ -396,79 +397,27 @@ dl.kv dd { max-width: 36em; }
   </div>
 </header>
 
-<section class="layer l-m8" id="m8" aria-labelledby="h-m8">
+<section class="layer sparse l-m8" id="m8" aria-labelledby="h-m8">
   <div class="rail"><span class="code">M8</span><span class="strip pat p-m8"></span></div>
   <div>
-    <div class="layer-head"><p class="en" lang="en">M8 · Now</p><h2 id="h-m8">進行中</h2><p>2026 年秋季</p></div>
-    <div class="grid2">
-      <article class="card split span2">
+    <div class="layer-head"><p class="en" lang="en">M8 · Education</p><h2 id="h-m8">學歷</h2></div>
+    <div class="schools">
+      <div class="school">
+        <p class="yrs">2025–2027</p>
         <div>
-          <h3 lang="en">On-premise AI4S Research Automation</h3>
-          <p class="when">2026-09 起｜FCA Lab</p>
-          <ul>
-            <li>Inner loop：常駐於 WSL2 systemd 的 Python runner 輪詢 job queue，依序執行 GPU 實驗。</li>
-            <li>Outer loop：每 15 分鐘以 headless 模式喚醒 Claude Code，讀取結果並排入下一批 job。</li>
-            <li>更換方法與修改論文都要先經過 human approval gate；系統另接 local vector RAG，使用 Ollama 與 LanceDB，並有 arXiv daily radar。</li>
-          </ul>
+          <h3>國立陽明交通大學</h3>
+          <p class="dept">人工智慧技術與應用碩士學位學程</p>
+          <p class="meta"><span>預計 2027 畢業</span><span>GPA <b class="num">4.08</b>｜累計 19 學分</span><span>FCA Lab，指導教授 黃經堯</span></p>
         </div>
-        <figure class="fig">
-          <svg viewBox="0 0 520 300" role="img" aria-label="AI4S 雙迴圈架構示意：外迴圈由 Claude Code 排入任務，內迴圈由 Python runner 執行 GPU 實驗">
-            <defs><marker id="arA" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--lc)"/></marker>
-            <marker id="arN" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
-            <rect class="svg-hi" x="196" y="18" width="168" height="56" rx="6"/>
-            <text class="svg-t" x="280" y="42" text-anchor="middle">Claude Code</text>
-            <text class="svg-s" x="280" y="60" text-anchor="middle">headless · 每 15 分鐘</text>
-            <rect class="svg-box" x="206" y="122" width="148" height="40" rx="6"/>
-            <text class="svg-t" x="280" y="147" text-anchor="middle">job queue</text>
-            <rect class="svg-box" x="196" y="212" width="168" height="56" rx="6"/>
-            <text class="svg-t" x="280" y="236" text-anchor="middle">Python runner</text>
-            <text class="svg-s" x="280" y="254" text-anchor="middle">WSL2 systemd</text>
-            <rect class="svg-box" x="398" y="222" width="104" height="36" rx="6"/>
-            <text class="svg-t" x="450" y="245" text-anchor="middle">GPU 實驗</text>
-            <path class="svg-acc" d="M280 74 V120" marker-end="url(#arA)"/>
-            <text class="svg-c" x="288" y="102">enqueue</text>
-            <path class="svg-line" d="M280 162 V210" marker-end="url(#arN)"/>
-            <path class="svg-line" d="M364 240 H396" marker-end="url(#arN)"/>
-            <path class="svg-acc" d="M450 222 V46 H366" marker-end="url(#arA)"/>
-            <text class="svg-c" x="456" y="140">results</text>
-            <text class="svg-c" x="196" y="196">INNER LOOP</text>
-            <text class="svg-c" x="370" y="96">OUTER LOOP</text>
-            <rect class="svg-box" x="14" y="22" width="140" height="48" rx="6"/>
-            <text class="svg-t" x="84" y="44" text-anchor="middle">human approval</text>
-            <text class="svg-s" x="84" y="61" text-anchor="middle">換方法、改論文</text>
-            <path class="svg-line" d="M196 46 H156" stroke-dasharray="4 3" marker-end="url(#arN)"/>
-            <rect class="svg-box" x="14" y="122" width="140" height="48" rx="6"/>
-            <text class="svg-t" x="84" y="144" text-anchor="middle">local vector RAG</text>
-            <text class="svg-s" x="84" y="161" text-anchor="middle">Ollama · LanceDB</text>
-            <rect class="svg-box" x="14" y="212" width="140" height="40" rx="6"/>
-            <text class="svg-t" x="84" y="237" text-anchor="middle">arXiv daily radar</text>
-            <path class="svg-line" d="M154 146 C180 146 180 74 214 74"/>
-            <path class="svg-line" d="M154 232 C190 232 190 74 226 74"/>
-          </svg>
-          <figcaption><span class="code">FIG. M8-1</span>雙迴圈架構。</figcaption>
-        </figure>
-      </article>
-      <article class="card">
-        <h3><span lang="en">ICLAB</span> <span class="muted">·</span> <span lang="en">Integrated Circuit Design Laboratory</span></h3>
-        <p class="when">2026 秋修習中｜進行至 Lab06</p>
-        <ul>
-          <li>每次 Lab 以 Verilog 撰寫 RTL，並進行 functional verification 與 logic synthesis。</li>
-          <li>以 Area、Clock Period、Latency 組成的 cost metric 比較不同架構。</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>2026 總統盃黑客松 <span class="nw">決審</span></h3>
-        <p class="when">決審日 2026-11-11｜提案編號 153</p>
-        <ul>
-          <li>FCA LAB 提案「未卜先雞、蛋然無恙」於 2026-09-17 自 181 案中入選決審 20 強。</li>
-          <li>十人跨校團隊，擔任隊長。</li>
-          <li>依公開行情資料重新界定問題，產品由 price forecasting 改為 supply-pressure index；以 task card 指派 AI coding agents 產生程式碼，統籌三種角色 App 的交付。</li>
-        </ul>
-        <figure class="fig">
-          <img src="img/eggwatch.jpg" alt="FCA LAB 產品網站首頁，標題為同一顆蛋不到三年半從 45.5 元跌到 18.5 元又回到 42.5 元" width="1400" height="875">
-          <figcaption><span class="code">FIG. M8-2</span>產品網站首頁，呈現 2010 至 2026 年的雞蛋產地價格走勢。</figcaption>
-        </figure>
-      </article>
+      </div>
+      <div class="school">
+        <p class="yrs">2021–2025</p>
+        <div>
+          <h3>國立中山大學</h3>
+          <p class="dept">電機工程學系 學士</p>
+          <p class="meta"><span>GPA <b class="num">3.90</b> / 4.3</span><span>系排 <b class="num">28 / 146</b>｜前 19.2%｜計至大三下</span><span>最佳學期 GPA <b class="num">4.24</b>｜大三下班排第 4</span></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -531,6 +480,53 @@ dl.kv dd { max-width: 36em; }
         </div>
       </div>
     </div>
+    <article class="card split" style="margin-top: var(--s6); max-width: 1160px">
+        <div>
+          <h3 lang="en">On-premise AI4S Research Automation</h3>
+          <p class="when">2026-09 起｜FCA Lab</p>
+          <ul>
+            <li>Inner loop：常駐於 WSL2 systemd 的 Python runner 輪詢 job queue，依序執行 GPU 實驗。</li>
+            <li>Outer loop：每 15 分鐘以 headless 模式喚醒 Claude Code，讀取結果並排入下一批 job。</li>
+            <li>更換方法與修改論文都要先經過 human approval gate；系統另接 local vector RAG，使用 Ollama 與 LanceDB，並有 arXiv daily radar。</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 300" role="img" aria-label="AI4S 雙迴圈架構示意：外迴圈由 Claude Code 排入任務，內迴圈由 Python runner 執行 GPU 實驗">
+            <defs><marker id="arA" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--lc)"/></marker>
+            <marker id="arN" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
+            <rect class="svg-hi" x="196" y="18" width="168" height="56" rx="6"/>
+            <text class="svg-t" x="280" y="42" text-anchor="middle">Claude Code</text>
+            <text class="svg-s" x="280" y="60" text-anchor="middle">headless · 每 15 分鐘</text>
+            <rect class="svg-box" x="206" y="122" width="148" height="40" rx="6"/>
+            <text class="svg-t" x="280" y="147" text-anchor="middle">job queue</text>
+            <rect class="svg-box" x="196" y="212" width="168" height="56" rx="6"/>
+            <text class="svg-t" x="280" y="236" text-anchor="middle">Python runner</text>
+            <text class="svg-s" x="280" y="254" text-anchor="middle">WSL2 systemd</text>
+            <rect class="svg-box" x="398" y="222" width="104" height="36" rx="6"/>
+            <text class="svg-t" x="450" y="245" text-anchor="middle">GPU 實驗</text>
+            <path class="svg-acc" d="M280 74 V120" marker-end="url(#arA)"/>
+            <text class="svg-c" x="288" y="102">enqueue</text>
+            <path class="svg-line" d="M280 162 V210" marker-end="url(#arN)"/>
+            <path class="svg-line" d="M364 240 H396" marker-end="url(#arN)"/>
+            <path class="svg-acc" d="M450 222 V46 H366" marker-end="url(#arA)"/>
+            <text class="svg-c" x="456" y="140">results</text>
+            <text class="svg-c" x="196" y="196">INNER LOOP</text>
+            <text class="svg-c" x="370" y="96">OUTER LOOP</text>
+            <rect class="svg-box" x="14" y="22" width="140" height="48" rx="6"/>
+            <text class="svg-t" x="84" y="44" text-anchor="middle">human approval</text>
+            <text class="svg-s" x="84" y="61" text-anchor="middle">換方法、改論文</text>
+            <path class="svg-line" d="M196 46 H156" stroke-dasharray="4 3" marker-end="url(#arN)"/>
+            <rect class="svg-box" x="14" y="122" width="140" height="48" rx="6"/>
+            <text class="svg-t" x="84" y="144" text-anchor="middle">local vector RAG</text>
+            <text class="svg-s" x="84" y="161" text-anchor="middle">Ollama · LanceDB</text>
+            <rect class="svg-box" x="14" y="212" width="140" height="40" rx="6"/>
+            <text class="svg-t" x="84" y="237" text-anchor="middle">arXiv daily radar</text>
+            <path class="svg-line" d="M154 146 C180 146 180 74 214 74"/>
+            <path class="svg-line" d="M154 232 C190 232 190 74 226 74"/>
+          </svg>
+          <figcaption><span class="code">FIG. M7-3</span>雙迴圈架構。</figcaption>
+        </figure>
+      </article>
   </div>
 </section>
 
@@ -556,10 +552,19 @@ dl.kv dd { max-width: 36em; }
           <h3>2026 總統盃黑客松 <span class="nw">決審 20 強</span></h3>
           <dl class="kv">
             <dt>主辦</dt><dd>總統盃黑客松委員會，召集人為行政院副院長</dd>
+            <dt>提案</dt><dd>FCA LAB「未卜先雞、蛋然無恙」，編號 153</dd>
             <dt>構面</dt><dd>智慧治理</dd>
             <dt>結果</dt><dd>初審自 181 案中入選決審 20 強，決審 2026-11-11</dd>
             <dt>日期</dt><dd>2026-09-17</dd>
           </dl>
+          <ul>
+            <li>十人跨校團隊，擔任隊長。</li>
+            <li>依公開行情資料重新界定問題，產品由 price forecasting 改為 supply-pressure index；以 task card 指派 AI coding agents 產生程式碼，統籌三種角色 App 的交付。</li>
+          </ul>
+          <figure class="fig">
+          <img src="img/eggwatch.jpg" alt="FCA LAB 產品網站首頁，標題為同一顆蛋不到三年半從 45.5 元跌到 18.5 元又回到 42.5 元" width="1400" height="875">
+          <figcaption><span class="code">FIG. M6-1</span>產品網站首頁，呈現 2010 至 2026 年的雞蛋產地價格走勢。</figcaption>
+        </figure>
         </article>
         <article class="card">
           <h3>2026 臺北大學 AI 智慧跨域整合創作競賽 <span class="nw">優選獎</span></h3>
@@ -582,11 +587,11 @@ dl.kv dd { max-width: 36em; }
       <div class="photos">
         <figure class="fig">
           <img class="portrait" src="img/award.jpg" alt="臺北大學 AI 智慧跨域整合創作競賽頒獎典禮，陳泓光手持優選獎獎金板與頒獎人合影" width="900" height="1066">
-          <figcaption><span class="code">FIG. M6-1</span>2026-06-04 頒獎典禮。照片：國立臺北大學提供。</figcaption>
+          <figcaption><span class="code">FIG. M6-2</span>2026-06-04 頒獎典禮。照片：國立臺北大學提供。</figcaption>
         </figure>
         <figure class="fig">
           <img src="img/demo.jpg" alt="決賽現場，陳泓光向後跌坐在軟墊上，手持手機示範跌倒偵測" width="1200" height="1095">
-          <figcaption><span class="code">FIG. M6-2</span>決賽實機示範，以實際跌倒觸發 FallGuard。照片：國立臺北大學提供。</figcaption>
+          <figcaption><span class="code">FIG. M6-3</span>決賽實機示範，以實際跌倒觸發 FallGuard。照片：國立臺北大學提供。</figcaption>
         </figure>
       </div>
     </div>
@@ -596,68 +601,7 @@ dl.kv dd { max-width: 36em; }
 <section class="layer dense si l-m5" id="m5" aria-labelledby="h-m5">
   <div class="rail"><span class="code">M5</span><span class="strip pat p-m5"></span></div>
   <div>
-    <div class="layer-head"><p class="en" lang="en">M5 · Silicon</p><h2 id="h-m5">晶片實作</h2><p>CNN 晶片與 IoTDF 的 RTL 由本人撰寫</p></div>
-    <div class="grid2">
-      <article class="card split span2">
-        <div>
-          <h3 lang="en">CNN Convolution Accelerator</h3>
-          <p class="when">系統晶片實作專題｜三人｜2024</p>
-          <ul>
-            <li>分工：algorithm design、RTL coding、back-end flow。</li>
-            <li>64×64 影像依序經過含 zero-padding 的 3×3 Convolution 與 ReLU、2×2 Max-Pooling、Flatten，由 FSM 控制各層 memory 讀寫。</li>
-            <li>Interleave 兩張輸入影像的 pixel stream，單一 memory channel 同時服務兩者，省去額外的 Line Buffer。</li>
-            <li>以 TSMC 0.13 µm cell library 完成 Logic Synthesis 與 Auto Place &amp; Route，並執行 DRC 與 LVS。</li>
-          </ul>
-        </div>
-        <figure class="fig">
-          <svg viewBox="0 0 520 300" role="img" aria-label="CNN 加速晶片示意：zero-padding 的 3×3 卷積視窗、兩張影像交錯的 pixel stream 與運算流程">
-            <defs><marker id="arB" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
-            <text class="svg-c" x="16" y="20">ZERO-PADDING · 3×3 KERNEL</text>
-            <g id="grid"></g>
-            <rect class="svg-hi" x="16" y="30" width="66" height="66" rx="3"/>
-            <text class="svg-s" x="16" y="182">輸入影像 64×64</text>
-            <text class="svg-c" x="16" y="214">INTERLEAVED PIXEL STREAM</text>
-            <g id="stream"></g>
-            <path class="svg-line" d="M330 244 H352" marker-end="url(#arB)"/>
-            <rect class="svg-box" x="354" y="226" width="150" height="36" rx="6"/>
-            <text class="svg-t" x="429" y="249" text-anchor="middle">single memory channel</text>
-            <rect class="svg-hi" x="300" y="30" width="204" height="36" rx="6"/>
-            <text class="svg-t" x="402" y="53" text-anchor="middle">Conv 3×3 + ReLU</text>
-            <path class="svg-line" d="M402 66 V86" marker-end="url(#arB)"/>
-            <rect class="svg-box" x="300" y="88" width="204" height="36" rx="6"/>
-            <text class="svg-t" x="402" y="111" text-anchor="middle">Max-Pooling 2×2</text>
-            <path class="svg-line" d="M402 124 V144" marker-end="url(#arB)"/>
-            <rect class="svg-box" x="300" y="146" width="204" height="36" rx="6"/>
-            <text class="svg-t" x="402" y="169" text-anchor="middle">Flatten</text>
-            <text class="svg-s" x="300" y="202">FSM 控制各層 memory 讀寫</text>
-          </svg>
-          <figcaption><span class="code">FIG. M5-1</span>資料路徑：zero-padding 卷積與交錯 pixel stream。</figcaption>
-        </figure>
-      </article>
-      <article class="card">
-        <h3 lang="en">IoT Data Filtering · IoTDF</h3>
-        <p class="when">實用數位系統設計期末專題｜團隊｜課程成績 A+</p>
-        <ul>
-          <li>以 Verilog 撰寫 IoTDF 的 RTL，完成 functional verification 與 logic synthesis。</li>
-          <li>期末報告以英文撰寫：algorithm、architecture、verification flow、synthesis constraints、coverage check。</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3 lang="en">edge-rtl-agent</h3>
-        <p class="when">公開倉庫</p>
-        <ul>
-          <li lang="en">Local-first closed-loop RTL generation on a consumer 6GB GPU：small LLMs × open-source EDA；VerilogEval v2、LibreLane、sky130。</li>
-        </ul>
-        <a class="link" href="https://github.com/a413123a413123/edge-rtl-agent">github.com/a413123a413123/edge-rtl-agent</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="layer dense si l-m4" id="m4" aria-labelledby="h-m4">
-  <div class="rail"><span class="code">M4</span><span class="strip pat p-m4"></span></div>
-  <div>
-    <div class="layer-head"><p class="en" lang="en">M4 · Coursework</p><h2 id="h-m4">修課</h2><p>成績依成績單與學程證書</p></div>
+    <div class="layer-head"><p class="en" lang="en">M5 · Coursework</p><h2 id="h-m5">修課</h2><p>成績依成績單</p></div>
     <div class="courses">
       <div class="sheet-wrap">
         <table>
@@ -692,9 +636,29 @@ dl.kv dd { max-width: 36em; }
           </tbody>
         </table>
       </div>
-      <div class="sheet-wrap">
-        <table>
-          <caption>數位 IC 設計學程｜28 學分｜2025-06 取得</caption>
+    </div>
+    <article class="card" style="margin-top: var(--s5); max-width: 1160px">
+        <h3><span lang="en">ICLAB</span> <span class="muted">·</span> <span lang="en">Integrated Circuit Design Laboratory</span></h3>
+        <p class="when">2026 秋修習中｜進行至 Lab06</p>
+        <ul>
+          <li>每次 Lab 以 Verilog 撰寫 RTL，並進行 functional verification 與 logic synthesis。</li>
+          <li>以 Area、Clock Period、Latency 組成的 cost metric 比較不同架構。</li>
+        </ul>
+      </article>
+  </div>
+</section>
+
+<section class="layer l-m4" id="m4" aria-labelledby="h-m4">
+  <div class="rail"><span class="code">M4</span><span class="strip pat p-m4"></span></div>
+  <div>
+    <div class="layer-head"><p class="en" lang="en">M4 · Certificates</p><h2 id="h-m4">證書</h2></div>
+    <div class="certs">
+      <article class="card split">
+        <div>
+          <h3>數位 IC 設計學程</h3>
+          <p class="when">國立中山大學｜28 學分｜2025-06 取得</p>
+          <div class="sheet-wrap" style="margin-top: var(--s4)">
+            <table>
           <thead><tr><th scope="col">課程</th><th scope="col">成績</th></tr></thead>
           <tbody>
             <tr><td>數位系統設計</td><td class="grade top">A+</td></tr>
@@ -710,12 +674,20 @@ dl.kv dd { max-width: 36em; }
             <tr><td>硬體安全</td><td class="grade">抵免</td></tr>
           </tbody>
         </table>
-        <p class="tnote">標示抵免者為英語授課的國際線上課程。</p>
-      </div>
-      <div>
-        <div class="sheet-wrap">
-          <table>
-            <caption>數據科學微學程｜9 學分｜2025-06 取得</caption>
+            <p class="tnote">標示抵免者為英語授課的國際線上課程。</p>
+          </div>
+        </div>
+        <figure class="fig">
+          <img src="img/cert-dic.jpg" alt="國立中山大學數位 IC 設計學程證書，114 年 6 月" width="1100" height="777">
+          <figcaption><span class="code">FIG. M4-1</span>數位 IC 設計學程證書。</figcaption>
+        </figure>
+      </article>
+      <article class="card split">
+        <div>
+          <h3>數據科學微學程</h3>
+          <p class="when">國立中山大學｜9 學分｜2025-06 取得</p>
+          <div class="sheet-wrap" style="margin-top: var(--s4)">
+            <table>
             <thead><tr><th scope="col">課程</th><th scope="col">成績</th></tr></thead>
             <tbody>
               <tr><td>剖析都市：數據分析方法與應用</td><td class="grade top">A+</td></tr>
@@ -723,20 +695,105 @@ dl.kv dd { max-width: 36em; }
               <tr><td>智慧金融</td><td class="grade top">A+</td></tr>
             </tbody>
           </table>
+          </div>
         </div>
-        <figure class="fig" style="margin-top: var(--s5)">
-          <img src="img/coursera.jpg" alt="Coursera 學程證書：UC San Diego Data Structures and Algorithms Specialization，2024 年 8 月 19 日，六門課" width="1000" height="786">
-          <figcaption><span class="code">FIG. M4-1</span><span lang="en">UC San Diego Data Structures and Algorithms Specialization</span>，Coursera 六門課，2024-08-19 完成。</figcaption>
+        <figure class="fig">
+          <img src="img/cert-ds.jpg" alt="國立中山大學數據科學微學程證書，114 年 6 月" width="1100" height="777">
+          <figcaption><span class="code">FIG. M4-2</span>數據科學微學程證書。</figcaption>
         </figure>
-      </div>
+      </article>
+      <article class="card split">
+        <div>
+          <h3 lang="en">Data Structures and Algorithms Specialization</h3>
+          <p class="when">UC San Diego｜Coursera｜六門課｜2024-08-19 完成</p>
+          <div class="sheet-wrap" style="margin-top: var(--s4)">
+            <table>
+              <thead><tr><th scope="col">課程</th><th scope="col">狀態</th></tr></thead>
+              <tbody lang="en">
+                <tr><td>Algorithmic Toolbox</td><td class="grade">完成</td></tr>
+                <tr><td>Data Structures</td><td class="grade">完成</td></tr>
+                <tr><td>Algorithms on Graphs</td><td class="grade">完成</td></tr>
+                <tr><td>Algorithms on Strings</td><td class="grade">完成</td></tr>
+                <tr><td>Advanced Algorithms and Complexity</td><td class="grade">完成</td></tr>
+                <tr><td>Genome Assembly Programming Challenge</td><td class="grade">完成</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="fig">
+          <img src="img/coursera.jpg" alt="Coursera 學程證書：UC San Diego Data Structures and Algorithms Specialization，2024 年 8 月 19 日，六門課" width="1000" height="786">
+          <figcaption><span class="code">FIG. M4-3</span>Coursera 學程證書，可於 coursera.org 線上驗證。</figcaption>
+        </figure>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="layer l-m3" id="m3" aria-labelledby="h-m3">
+<section class="layer dense si l-m3" id="m3" aria-labelledby="h-m3">
   <div class="rail"><span class="code">M3</span><span class="strip pat p-m3"></span></div>
   <div>
-    <div class="layer-head"><p class="en" lang="en">M3 · Teaching &amp; Teams</p><h2 id="h-m3">教學與團隊</h2></div>
+    <div class="layer-head"><p class="en" lang="en">M3 · Silicon</p><h2 id="h-m3">晶片實作</h2><p>CNN 晶片與 IoTDF 的 RTL 由本人撰寫</p></div>
+    <div class="grid2">
+      <article class="card split span2">
+        <div>
+          <h3 lang="en">CNN Convolution Accelerator</h3>
+          <p class="when">系統晶片實作專題｜三人｜2024</p>
+          <ul>
+            <li>分工：algorithm design、RTL coding、back-end flow。</li>
+            <li>64×64 影像依序經過含 zero-padding 的 3×3 Convolution 與 ReLU、2×2 Max-Pooling、Flatten，由 FSM 控制各層 memory 讀寫。</li>
+            <li>Interleave 兩張輸入影像的 pixel stream，單一 memory channel 同時服務兩者，省去額外的 Line Buffer。</li>
+            <li>以 TSMC 0.13 µm cell library 完成 Logic Synthesis 與 Auto Place &amp; Route，並執行 DRC 與 LVS。</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 300" role="img" aria-label="CNN 加速晶片示意：zero-padding 的 3×3 卷積視窗、兩張影像交錯的 pixel stream 與運算流程">
+            <defs><marker id="arB" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--line-strong)"/></marker></defs>
+            <text class="svg-c" x="16" y="20">ZERO-PADDING · 3×3 KERNEL</text>
+            <g id="grid"></g>
+            <rect class="svg-hi" x="16" y="30" width="66" height="66" rx="3"/>
+            <text class="svg-s" x="16" y="182">輸入影像 64×64</text>
+            <text class="svg-c" x="16" y="214">INTERLEAVED PIXEL STREAM</text>
+            <g id="stream"></g>
+            <path class="svg-line" d="M330 244 H352" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="354" y="226" width="150" height="36" rx="6"/>
+            <text class="svg-t" x="429" y="249" text-anchor="middle">single memory channel</text>
+            <rect class="svg-hi" x="300" y="30" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="53" text-anchor="middle">Conv 3×3 + ReLU</text>
+            <path class="svg-line" d="M402 66 V86" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="300" y="88" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="111" text-anchor="middle">Max-Pooling 2×2</text>
+            <path class="svg-line" d="M402 124 V144" marker-end="url(#arB)"/>
+            <rect class="svg-box" x="300" y="146" width="204" height="36" rx="6"/>
+            <text class="svg-t" x="402" y="169" text-anchor="middle">Flatten</text>
+            <text class="svg-s" x="300" y="202">FSM 控制各層 memory 讀寫</text>
+          </svg>
+          <figcaption><span class="code">FIG. M3-1</span>資料路徑：zero-padding 卷積與交錯 pixel stream。</figcaption>
+        </figure>
+      </article>
+      <article class="card">
+        <h3 lang="en">IoT Data Filtering · IoTDF</h3>
+        <p class="when">實用數位系統設計期末專題｜團隊｜課程成績 A+</p>
+        <ul>
+          <li>以 Verilog 撰寫 IoTDF 的 RTL，完成 functional verification 與 logic synthesis。</li>
+          <li>期末報告以英文撰寫：algorithm、architecture、verification flow、synthesis constraints、coverage check。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 lang="en">edge-rtl-agent</h3>
+        <p class="when">公開倉庫</p>
+        <ul>
+          <li lang="en">Local-first closed-loop RTL generation on a consumer 6GB GPU：small LLMs × open-source EDA；VerilogEval v2、LibreLane、sky130。</li>
+        </ul>
+        <a class="link" href="https://github.com/a413123a413123/edge-rtl-agent">github.com/a413123a413123/edge-rtl-agent</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="layer l-m2" id="m2" aria-labelledby="h-m2">
+  <div class="rail"><span class="code">M2</span><span class="strip pat p-m2"></span></div>
+  <div>
+    <div class="layer-head"><p class="en" lang="en">M2 · Teaching &amp; Teams</p><h2 id="h-m2">教學與團隊</h2></div>
     <div class="grid2">
       <article class="card split span2">
         <div>
@@ -752,7 +809,7 @@ dl.kv dd { max-width: 36em; }
         </div>
         <figure class="fig">
           <img src="img/ai-lessons.jpg" alt="AI 半導體互動教材網站首頁，列出 AI 怎麼運作與 AI 與晶片兩組單元" width="1200" height="703">
-          <figcaption><span class="code">FIG. M3-1</span>互動教材網站首頁。</figcaption>
+          <figcaption><span class="code">FIG. M2-1</span>互動教材網站首頁。</figcaption>
         </figure>
       </article>
       <article class="card">
@@ -772,31 +829,6 @@ dl.kv dd { max-width: 36em; }
           <li>2023-03 擔任中山電機三校四系聯合系烤總召集人。</li>
         </ul>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="layer sparse l-m2" id="m2" aria-labelledby="h-m2">
-  <div class="rail"><span class="code">M2</span><span class="strip pat p-m2"></span></div>
-  <div>
-    <div class="layer-head"><p class="en" lang="en">M2 · Education</p><h2 id="h-m2">學歷</h2></div>
-    <div class="schools">
-      <div class="school">
-        <p class="yrs">2025–2027</p>
-        <div>
-          <h3>國立陽明交通大學</h3>
-          <p class="dept">人工智慧技術與應用碩士學位學程</p>
-          <p class="meta"><span>預計 2027 畢業</span><span>GPA <b class="num">4.08</b>｜累計 19 學分</span><span>FCA Lab，指導教授 黃經堯</span></p>
-        </div>
-      </div>
-      <div class="school">
-        <p class="yrs">2021–2025</p>
-        <div>
-          <h3>國立中山大學</h3>
-          <p class="dept">電機工程學系 學士</p>
-          <p class="meta"><span>GPA <b class="num">3.90</b> / 4.3</span><span>系排 <b class="num">28 / 146</b>｜前 19.2%｜計至大三下</span><span>最佳學期 GPA <b class="num">4.24</b>｜大三下班排第 4</span></p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
